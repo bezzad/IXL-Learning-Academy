@@ -21,7 +21,7 @@ namespace IXL.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base(Connections.IxlDb.Connection.Name, throwIfV1Schema: false)
         {
         }
 

@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using IXL.Core;
 
 namespace IXL
 {
@@ -7,6 +8,7 @@ namespace IXL
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+            filters.Add(new ElmahHandleErrorAttribute());
             filters.Add(new HandleErrorAttribute());
         }
     }
