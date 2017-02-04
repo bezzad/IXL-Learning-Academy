@@ -1,10 +1,15 @@
-﻿@{
-    ViewBag.Title = "Confirm Email";
+﻿@using IXL.Resources
+@{
+    ViewBag.Title = $"{Localization.Confirm_Email}";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div>
-    <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
+<br /><br />
+<h1>@ViewBag.Title</h1>
+
+<div style="padding: 20px;">
+    <div class="centered minForms">
+        <p>
+            @Localization.Thank_confirming_email_Please @Html.ActionLink(Localization.Click_here_to_Log_in, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+        </p>
+    </div>
 </div>

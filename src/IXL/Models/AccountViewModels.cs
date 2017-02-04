@@ -1,13 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using IXL.Resources;
 
 namespace IXL.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(Localization), Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(ResourceType = typeof(Localization), Name = "Username")]
+        public string Username { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -29,11 +34,12 @@ namespace IXL.Models
         public string Provider { get; set; }
 
         [Required]
-        [Display(Name = "Code")]
+        [Display(ResourceType = typeof(Localization), Name = "Code")]
         public string Code { get; set; }
+
         public string ReturnUrl { get; set; }
 
-        [Display(Name = "Remember this browser?")]
+        [Display(ResourceType = typeof(Localization), Name = "Remember_this_browser")]
         public bool RememberBrowser { get; set; }
 
         public bool RememberMe { get; set; }
@@ -42,42 +48,47 @@ namespace IXL.Models
     public class ForgotViewModel
     {
         [Required]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(Localization), Name = "Email")]
         public string Email { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(ResourceType = typeof(Localization), Name = "Username")]
+        public string Username { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(Localization), Name = "Password")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(ResourceType = typeof(Localization), Name = "RememberMe")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
         [Required]
+        [Display(ResourceType = typeof(Localization), Name = "Username")]
+        public string Username { get; set; }
+
+        [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(Localization), Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessageResourceType = typeof(Localization),
+            ErrorMessageResourceName = "The_0_must_be_at_least__2__characters_long", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(Localization), Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(ResourceType = typeof(Localization), Name = "ConfirmPassword")]
+        [Compare("Password", ErrorMessageResourceType = typeof(Localization),
+            ErrorMessageResourceName = "The_password_and_confirmation_password_do_not_match")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -85,18 +96,20 @@ namespace IXL.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(Localization), Name = "Email")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessageResourceType = typeof(Localization),
+            ErrorMessageResourceName = "The_0_must_be_at_least__2__characters_long", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(ResourceType = typeof(Localization), Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(ResourceType = typeof(Localization), Name = "ConfirmPassword")]
+        [Compare("Password", ErrorMessageResourceType = typeof(Localization),
+            ErrorMessageResourceName = "The_password_and_confirmation_password_do_not_match")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
@@ -106,7 +119,7 @@ namespace IXL.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(ResourceType = typeof(Localization), Name = "Email")]
         public string Email { get; set; }
     }
 }
