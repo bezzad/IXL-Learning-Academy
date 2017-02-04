@@ -1,0 +1,1243 @@
+﻿USE [IXL]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_TrafficRankings_Insert]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_TrafficRankings_Insert]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Insert_NewsletterSubscribeEmails]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_Insert_NewsletterSubscribeEmails]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Insert_ContactMe]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_Insert_ContactMe]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_GetRankingUpdatesInfo]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_GetRankingUpdatesInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_GetRankingUpdateInfo]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[sp_GetRankingUpdateInfo]
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_LogError]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[ELMAH_LogError]
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_GetErrorXml]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[ELMAH_GetErrorXml]
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_GetErrorsXml]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP PROCEDURE IF EXISTS [dbo].[ELMAH_GetErrorsXml]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserLogins]') AND type in (N'U'))
+ALTER TABLE [dbo].[UserLogins] DROP CONSTRAINT IF EXISTS [FK_dbo.UserLogins_dbo.Users_IdentityUser_Id]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserInRoles]') AND type in (N'U'))
+ALTER TABLE [dbo].[UserInRoles] DROP CONSTRAINT IF EXISTS [FK_dbo.UserInRoles_dbo.Users_IdentityUser_Id]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserInRoles]') AND type in (N'U'))
+ALTER TABLE [dbo].[UserInRoles] DROP CONSTRAINT IF EXISTS [FK_dbo.UserInRoles_dbo.UserRoles_RoleId]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserClaims]') AND type in (N'U'))
+ALTER TABLE [dbo].[UserClaims] DROP CONSTRAINT IF EXISTS [FK_dbo.UserClaims_dbo.Users_IdentityUser_Id]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrafficRankings]') AND type in (N'U'))
+ALTER TABLE [dbo].[TrafficRankings] DROP CONSTRAINT IF EXISTS [DF__TrafficRa__IsAct__5A4F643B]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrafficRankings]') AND type in (N'U'))
+ALTER TABLE [dbo].[TrafficRankings] DROP CONSTRAINT IF EXISTS [DF__TrafficRa__Modif__595B4002]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Sitemap]') AND type in (N'U'))
+ALTER TABLE [dbo].[Sitemap] DROP CONSTRAINT IF EXISTS [DF_Sitemap_LastModified]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Sitemap]') AND type in (N'U'))
+ALTER TABLE [dbo].[Sitemap] DROP CONSTRAINT IF EXISTS [DF_Sitemap_LangId]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[NewsletterSubscribeEmails]') AND type in (N'U'))
+ALTER TABLE [dbo].[NewsletterSubscribeEmails] DROP CONSTRAINT IF EXISTS [DF_NewsletterSubscribeEmails_Enable]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Languages]') AND type in (N'U'))
+ALTER TABLE [dbo].[Languages] DROP CONSTRAINT IF EXISTS [DF_Languages_IsActive]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_Error]') AND type in (N'U'))
+ALTER TABLE [dbo].[ELMAH_Error] DROP CONSTRAINT IF EXISTS [DF_ELMAH_Error_ErrorId]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ContactMe]') AND type in (N'U'))
+ALTER TABLE [dbo].[ContactMe] DROP CONSTRAINT IF EXISTS [DF_ContactMe_IsRead]
+GO
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ContactMe]') AND type in (N'U'))
+ALTER TABLE [dbo].[ContactMe] DROP CONSTRAINT IF EXISTS [DF_ContactMe_ModifyTime]
+GO
+/****** Object:  Index [UserNameIndex]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [UserNameIndex] ON [dbo].[Users]
+GO
+/****** Object:  Index [RoleNameIndex]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [RoleNameIndex] ON [dbo].[UserRoles]
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_IdentityUser_Id] ON [dbo].[UserLogins]
+GO
+/****** Object:  Index [IX_RoleId]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_RoleId] ON [dbo].[UserInRoles]
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_IdentityUser_Id] ON [dbo].[UserInRoles]
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_IdentityUser_Id] ON [dbo].[UserClaims]
+GO
+/****** Object:  Index [IX_TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_TrafficRankings] ON [dbo].[TrafficRankings]
+GO
+/****** Object:  Index [IX_ELMAH_Error_App_Time_Seq]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP INDEX IF EXISTS [IX_ELMAH_Error_App_Time_Seq] ON [dbo].[ELMAH_Error]
+GO
+/****** Object:  Index [PK_ELMAH_Error]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_Error]') AND type in (N'U'))
+ALTER TABLE [dbo].[ELMAH_Error] DROP CONSTRAINT IF EXISTS [PK_ELMAH_Error]
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[Users]
+GO
+/****** Object:  Table [dbo].[UserRoles]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[UserRoles]
+GO
+/****** Object:  Table [dbo].[UserLogins]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[UserLogins]
+GO
+/****** Object:  Table [dbo].[UserInRoles]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[UserInRoles]
+GO
+/****** Object:  Table [dbo].[UserClaims]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[UserClaims]
+GO
+/****** Object:  Table [dbo].[Sitemap]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[Sitemap]
+GO
+/****** Object:  Table [dbo].[Setting]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[Setting]
+GO
+/****** Object:  Table [dbo].[NewsletterSubscribeEmails]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[NewsletterSubscribeEmails]
+GO
+/****** Object:  Table [dbo].[ELMAH_Error]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[ELMAH_Error]
+GO
+/****** Object:  Table [dbo].[ContactMe]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[ContactMe]
+GO
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[__MigrationHistory]
+GO
+/****** Object:  UserDefinedFunction [dbo].[udfv_LanguagesView]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP FUNCTION IF EXISTS [dbo].[udfv_LanguagesView]
+GO
+/****** Object:  Table [dbo].[Languages]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[Languages]
+GO
+/****** Object:  UserDefinedFunction [dbo].[udft_TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP FUNCTION IF EXISTS [dbo].[udft_TrafficRankings]
+GO
+/****** Object:  Table [dbo].[TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP TABLE IF EXISTS [dbo].[TrafficRankings]
+GO
+/****** Object:  UserDefinedFunction [dbo].[GetSettingByKey]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP FUNCTION IF EXISTS [dbo].[GetSettingByKey]
+GO
+/****** Object:  User [admin]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP USER IF EXISTS [admin]
+GO
+USE [master]
+GO
+/****** Object:  Database [IXL]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+DROP DATABASE IF EXISTS [IXL]
+GO
+/****** Object:  Database [IXL]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'IXL')
+BEGIN
+CREATE DATABASE [IXL]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'IXL', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\IXL.mdf' , SIZE = 5312KB , MAXSIZE = UNLIMITED, FILEGROWTH = 10%)
+ LOG ON 
+( NAME = N'IXL_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\IXL_log.ldf' , SIZE = 2048KB , MAXSIZE = 2048GB , FILEGROWTH = 10%)
+END
+
+GO
+ALTER DATABASE [IXL] SET COMPATIBILITY_LEVEL = 130
+GO
+IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
+begin
+EXEC [IXL].[dbo].[sp_fulltext_database] @action = 'enable'
+end
+GO
+ALTER DATABASE [IXL] SET ANSI_NULL_DEFAULT OFF 
+GO
+ALTER DATABASE [IXL] SET ANSI_NULLS OFF 
+GO
+ALTER DATABASE [IXL] SET ANSI_PADDING OFF 
+GO
+ALTER DATABASE [IXL] SET ANSI_WARNINGS OFF 
+GO
+ALTER DATABASE [IXL] SET ARITHABORT OFF 
+GO
+ALTER DATABASE [IXL] SET AUTO_CLOSE ON 
+GO
+ALTER DATABASE [IXL] SET AUTO_SHRINK ON 
+GO
+ALTER DATABASE [IXL] SET AUTO_UPDATE_STATISTICS ON 
+GO
+ALTER DATABASE [IXL] SET CURSOR_CLOSE_ON_COMMIT OFF 
+GO
+ALTER DATABASE [IXL] SET CURSOR_DEFAULT  GLOBAL 
+GO
+ALTER DATABASE [IXL] SET CONCAT_NULL_YIELDS_NULL OFF 
+GO
+ALTER DATABASE [IXL] SET NUMERIC_ROUNDABORT OFF 
+GO
+ALTER DATABASE [IXL] SET QUOTED_IDENTIFIER OFF 
+GO
+ALTER DATABASE [IXL] SET RECURSIVE_TRIGGERS OFF 
+GO
+ALTER DATABASE [IXL] SET  DISABLE_BROKER 
+GO
+ALTER DATABASE [IXL] SET AUTO_UPDATE_STATISTICS_ASYNC ON 
+GO
+ALTER DATABASE [IXL] SET DATE_CORRELATION_OPTIMIZATION OFF 
+GO
+ALTER DATABASE [IXL] SET TRUSTWORTHY OFF 
+GO
+ALTER DATABASE [IXL] SET ALLOW_SNAPSHOT_ISOLATION OFF 
+GO
+ALTER DATABASE [IXL] SET PARAMETERIZATION SIMPLE 
+GO
+ALTER DATABASE [IXL] SET READ_COMMITTED_SNAPSHOT OFF 
+GO
+ALTER DATABASE [IXL] SET HONOR_BROKER_PRIORITY OFF 
+GO
+ALTER DATABASE [IXL] SET RECOVERY FULL 
+GO
+ALTER DATABASE [IXL] SET  MULTI_USER 
+GO
+ALTER DATABASE [IXL] SET PAGE_VERIFY CHECKSUM  
+GO
+ALTER DATABASE [IXL] SET DB_CHAINING OFF 
+GO
+ALTER DATABASE [IXL] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
+GO
+ALTER DATABASE [IXL] SET TARGET_RECOVERY_TIME = 0 SECONDS 
+GO
+ALTER DATABASE [IXL] SET DELAYED_DURABILITY = DISABLED 
+GO
+EXEC sys.sp_db_vardecimal_storage_format N'IXL', N'ON'
+GO
+ALTER DATABASE [IXL] SET QUERY_STORE = OFF
+GO
+USE [IXL]
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET MAXDOP = 0;
+GO
+ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET MAXDOP = PRIMARY;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET LEGACY_CARDINALITY_ESTIMATION = OFF;
+GO
+ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET LEGACY_CARDINALITY_ESTIMATION = PRIMARY;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET PARAMETER_SNIFFING = ON;
+GO
+ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET PARAMETER_SNIFFING = PRIMARY;
+GO
+ALTER DATABASE SCOPED CONFIGURATION SET QUERY_OPTIMIZER_HOTFIXES = OFF;
+GO
+ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES = PRIMARY;
+GO
+USE [IXL]
+GO
+/****** Object:  User [admin]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = N'admin')
+CREATE USER [admin] FOR LOGIN [admin] WITH DEFAULT_SCHEMA=[dbo]
+GO
+/****** Object:  UserDefinedFunction [dbo].[GetSettingByKey]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GetSettingByKey]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+BEGIN
+execute dbo.sp_executesql @statement = N'
+CREATE FUNCTION [dbo].[GetSettingByKey]
+(
+	@Key NVARCHAR(256)
+)
+RETURNS NVARCHAR(MAX)
+AS
+
+
+BEGIN
+	DECLARE @result NVARCHAR(MAX) = ''''; 
+	
+	SELECT @result = as1.[Value]
+	FROM   [xomorod.com_xomorod].dbo.Setting as1
+	WHERE  LOWER(as1.[Key]) = LOWER(@Key)
+	
+	RETURN @result;
+END
+
+' 
+END
+
+GO
+/****** Object:  Table [dbo].[TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[TrafficRankings]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[TrafficRankings](
+	[RankID] [int] IDENTITY(1,1) NOT NULL,
+	[ModifyDate] [datetime] NOT NULL,
+	[GlobalRanking] [int] NULL,
+	[IranRanking] [int] NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK__TrafficR__B37AFB96CB2473E2] PRIMARY KEY CLUSTERED 
+(
+	[RankID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  UserDefinedFunction [dbo].[udft_TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[udft_TrafficRankings]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+BEGIN
+execute dbo.sp_executesql @statement = N'
+CREATE FUNCTION [dbo].[udft_TrafficRankings]
+(
+)
+RETURNS TABLE
+AS
+
+
+RETURN 
+(
+    WITH MyCTE AS
+    (
+        SELECT d.ModifyDate       AS MDate,
+               MAX(d.ModifyTime)  AS MTime
+        FROM   (
+                   SELECT CONVERT(DATE, tr.ModifyDate) AS ModifyDate,
+                          CONVERT(TIME, tr.ModifyDate) AS ModifyTime
+                   FROM   TrafficRankings tr
+               )                     d
+        GROUP BY d.ModifyDate
+    )
+    SELECT RankID,
+    ModifyDate,
+    GlobalRanking,
+    IranRanking
+    FROM dbo.TrafficRankings
+    INNER JOIN MyCTE
+    ON MyCTE.MDate = CONVERT(DATE, dbo.TrafficRankings.ModifyDate)
+    AND MyCTE.MTime = CONVERT(TIME, dbo.TrafficRankings.ModifyDate)
+    AND IsActive = 1
+)
+
+' 
+END
+
+GO
+/****** Object:  Table [dbo].[Languages]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Languages]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Languages](
+	[LangID] [int] IDENTITY(1,1) NOT NULL,
+	[LangFullName] [nvarchar](50) NOT NULL,
+	[Culture] [varchar](5) NOT NULL,
+	[IsActive] [bit] NOT NULL,
+ CONSTRAINT [PK_Languages] PRIMARY KEY CLUSTERED 
+(
+	[LangID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  UserDefinedFunction [dbo].[udfv_LanguagesView]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[udfv_LanguagesView]') AND type in (N'FN', N'IF', N'TF', N'FS', N'FT'))
+BEGIN
+execute dbo.sp_executesql @statement = N'
+
+CREATE FUNCTION [dbo].[udfv_LanguagesView] ( )
+RETURNS TABLE
+AS
+
+
+RETURN
+    ( SELECT    [LangID] ,
+                [Culture] ,
+                [LangFullName]
+      FROM      dbo.Languages
+      WHERE     IsActive = 1
+    )
+
+' 
+END
+
+GO
+/****** Object:  Table [dbo].[__MigrationHistory]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[__MigrationHistory]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[__MigrationHistory](
+	[MigrationId] [nvarchar](150) NOT NULL,
+	[ContextKey] [nvarchar](300) NOT NULL,
+	[Model] [varbinary](max) NOT NULL,
+	[ProductVersion] [nvarchar](32) NOT NULL,
+ CONSTRAINT [PK_dbo.__MigrationHistory] PRIMARY KEY CLUSTERED 
+(
+	[MigrationId] ASC,
+	[ContextKey] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[ContactMe]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ContactMe]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[ContactMe](
+	[ContactMeID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NULL,
+	[Email] [nvarchar](max) NULL,
+	[Subject] [nvarchar](max) NULL,
+	[Message] [nvarchar](max) NULL,
+	[ModifyUTC] [datetime] NOT NULL,
+	[UserId] [nvarchar](128) NOT NULL,
+	[IsRead] [bit] NOT NULL,
+ CONSTRAINT [PK_ContactMe] PRIMARY KEY CLUSTERED 
+(
+	[ContactMeID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[ELMAH_Error]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_Error]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[ELMAH_Error](
+	[ErrorId] [uniqueidentifier] NOT NULL,
+	[Application] [nvarchar](60) NOT NULL,
+	[Host] [nvarchar](50) NOT NULL,
+	[Type] [nvarchar](100) NOT NULL,
+	[Source] [nvarchar](60) NOT NULL,
+	[Message] [nvarchar](500) NOT NULL,
+	[User] [nvarchar](50) NOT NULL,
+	[StatusCode] [int] NOT NULL,
+	[TimeUtc] [datetime] NOT NULL,
+	[Sequence] [int] IDENTITY(1,1) NOT NULL,
+	[AllXml] [ntext] NOT NULL
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[NewsletterSubscribeEmails]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[NewsletterSubscribeEmails]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[NewsletterSubscribeEmails](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[EmailAddress] [nvarchar](128) NOT NULL,
+	[Enable] [bit] NOT NULL,
+ CONSTRAINT [PK_NewsletterSubscribeEmails_Email] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[Setting]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Setting]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Setting](
+	[Key] [nvarchar](100) NOT NULL,
+	[Value] [nvarchar](max) NULL,
+ CONSTRAINT [PK_Setting] PRIMARY KEY CLUSTERED 
+(
+	[Key] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[Sitemap]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Sitemap]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Sitemap](
+	[Id] [bigint] NOT NULL,
+	[LangId] [int] NOT NULL,
+	[Title] [nvarchar](4000) NULL,
+	[Frequency] [varchar](10) NULL,
+	[LastModified] [datetime] NOT NULL,
+	[Priority] [numeric](18, 2) NULL,
+	[Url] [varchar](4000) NULL,
+	[ParentId] [bigint] NULL,
+ CONSTRAINT [PK_Sitemap_1] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC,
+	[LangId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[UserClaims]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserClaims]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[UserClaims](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [nvarchar](max) NULL,
+	[ClaimType] [nvarchar](max) NULL,
+	[ClaimValue] [nvarchar](max) NULL,
+	[IdentityUser_Id] [nvarchar](128) NULL,
+ CONSTRAINT [PK_dbo.UserClaims] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[UserInRoles]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserInRoles]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[UserInRoles](
+	[UserId] [nvarchar](128) NOT NULL,
+	[RoleId] [nvarchar](128) NOT NULL,
+	[IdentityUser_Id] [nvarchar](128) NULL,
+ CONSTRAINT [PK_dbo.UserInRoles] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC,
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[UserLogins]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserLogins]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[UserLogins](
+	[LoginProvider] [nvarchar](128) NOT NULL,
+	[ProviderKey] [nvarchar](128) NOT NULL,
+	[UserId] [nvarchar](128) NOT NULL,
+	[IdentityUser_Id] [nvarchar](128) NULL,
+ CONSTRAINT [PK_dbo.UserLogins] PRIMARY KEY CLUSTERED 
+(
+	[LoginProvider] ASC,
+	[ProviderKey] ASC,
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[UserRoles]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserRoles]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[UserRoles](
+	[Id] [nvarchar](128) NOT NULL,
+	[Name] [nvarchar](256) NOT NULL,
+ CONSTRAINT [PK_dbo.UserRoles] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+END
+GO
+/****** Object:  Table [dbo].[Users]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND type in (N'U'))
+BEGIN
+CREATE TABLE [dbo].[Users](
+	[Id] [nvarchar](128) NOT NULL,
+	[Email] [nvarchar](256) NULL,
+	[EmailConfirmed] [bit] NOT NULL,
+	[PasswordHash] [nvarchar](max) NULL,
+	[SecurityStamp] [nvarchar](max) NULL,
+	[PhoneNumber] [nvarchar](max) NULL,
+	[PhoneNumberConfirmed] [bit] NOT NULL,
+	[TwoFactorEnabled] [bit] NOT NULL,
+	[LockoutEndDateUtc] [datetime] NULL,
+	[LockoutEnabled] [bit] NOT NULL,
+	[AccessFailedCount] [int] NOT NULL,
+	[UserName] [nvarchar](256) NOT NULL,
+	[Discriminator] [nvarchar](128) NOT NULL,
+ CONSTRAINT [PK_dbo.Users] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+END
+GO
+INSERT [dbo].[__MigrationHistory] ([MigrationId], [ContextKey], [Model], [ProductVersion]) VALUES (N'201702041756334_InitialCreate', N'IXL.Migrations.Configuration', 0x1F8B0800000000000400DD5CDB6EE436127D5F60FF41D053B2705ABEEC0C668DEE049EB6BD6BAC2F83694F90B7015B62B78591A88E44393616FB6579C827ED2F2C295117DE24EAD2EDEE2040E016C953C562B18A2C56CDFF7EFF63FAD34B1858CF304EFC08CDEC93C9B16D41E4469E8FD6333BC5AB1F3ED83FFDF8D7BF4CAFBCF0C5FAB9E87746FB91912899D94F186FCE1D27719F60089249E8BB7194442B3C71A3D0015EE49C1E1FFFC33939712081B00996654D3FA708FB21CC7E909FF308B970835310DC451E0C12F69DB42C3254EB1E8430D90017CEEC9B5F6E27792FDBBA087C403858C060655B00A108034CF83BFF92C0058E23B45E6CC807103CBE6E20E9B702410219DFE75577D3291C9FD22938D5C002CA4D131C851D014FCE984C1C71782FC9DAA5CC88D4AE8874F12B9D75263922340F669F3E4701118048F07C1EC4B4F3CCBE2B495C249B7B8827C5C0490E791D13B8DFA2F8DBA48E7864198F3B2A75E874724CFF3BB2E66980D318CE104C710C8223EB53BA0C7CF7DFF0F531FA06D1ECEC64B93AFBF0EE3DF0CEDEFF1D9EBDABCF94CC95F4E33E904F9FE2680363C21B5C95F3B72D871FE78803CB61B531B954882E91ED605B77E0E516A2357E221BE5F4836D5DFB2FD02BBE30E5FA827CB27BC8201CA7E4E77D1A046019C0B2DD69A449FFDF40F5F4DDFB51A8DE83677F9D2DBD409F6C9C98ECABCF30C85A93277F936F2F6EBDBFB26ED77114D2DFBC7EE5AD5F17511ABB743291B6CB2388D710F3DC4D9D4A798D549A428DAFD605EAFEAB36E554566F65573AA13E3BA120B1EBDD50F0BB5DBAC61A77B1D990C5CB548B4AA449E12A273511461D59A4AD5215E27027271F4C74059139D8D6479040268EFAAECCF9718C37CC3C007E38FE8EC960F77FCB0CF30637089F9D2A74AA26C6058E62F84F88600C30F43E018C618CAA1568D3FBD6FD46FE34D2FB6632D96A511ABBA1F43308D2B149F5F216B7D1DA47E32B7F06BBFFCA9FB1493E3FFB9E683334238ACE04DEA8BFDA23B56F3181B35D7B1B6E9ABB26BE1B17DB6BBB8CBF53F67F931CCA7DE12A047E30C285C1800AB9A3AFFC3884E52C3F46E4780650F77D0692842CADF72F903C6DDDF32CA09BC644A11618849BAD53FBF41421789F86CB46FB353AADD196E6F1B7E81AB8E4F07285E8A8C178B791FB2D4AF115F22EC941E80B760B40FAF3D10FCD014661E7C27561925C136586DE3C4A116E3BD2B5DBECB7BEB06727ABE61B3B65F36BD14FBEB2D79AB577F67A1FD5A5BD89C3CCAB1B7058F4D37098373773C8FA74E590221930C8BA69F8CB5A9BD9CBBB74097A5C2449E4FA19578A401E0BC3F0B3247BCD6A8FC9C837C83C8472477CAB4FEFABE40B715AB6E8291FD0250C2086D6859B073AE7207181272B2C9990D781B142289AABAD8AB9BF493489FB86311D04A8B34AC8E1C04758F6F53E72FD0D085AA5248C343C27D0B99734C4964BB88188126C958409717538873250D21116A54D4253A7A671668A58B72E6D0BAE3435BA6006BFDAC793C989B4E0CD145A748A85401A95AAAF3C982D33E256346CE3CB43308B1A0AEC56BC1579E4A6D38859C18E8E2F0DDE0AF737385A59E4A69CEC2F4C76178CE5E0E1E59236C217ACB85911E2EC7295B0B38138290ABE8098F75D95FB509A7549323C8838F326C04A3A1D408BD347232ADB901D608B2343232CD3EB0EB06D8812584D1164C4FA8349ADA3FE5945B4E6461EBD9C4FA91292573072C0351C8556884E9E9F7807A1706752BD54B4CEC5D8BD68E663261F9537D10016731957428582B74848E56E8C1DCE700909FE450358CC655C0931C56C1190C2FF987AA0E1E2E11DCE481BACB831946EA64A9970F29C8922B7C2D124574CEFC06643EEABB5640BF6C55AE49916F31F16DD5311C21CC37113454642C96D490947315843A19590269C5EFB71822F01064B406FC4732F94BA299DAAC6D01724EB7E535EC1C2EC17BDE9DF4CEDAA273DCEB9CA277536F69ACC2CA467FDEC3548B1EEEAE159D20B0840AC082FCEA3200D91FEEAA11F9DC729EAE3F32F32C2D411F8976E179294A4AB1F2F72A3059137C3C0C5290F2AFD17480FA1137311C6AF0B5AF740AF47292E767514DD656F2F16ACF762894FEAC3D66A0B9B891815CFCFAE35D9F3A52209A00E73E9276EEC873E0284CB6DAC559B6413FAF7C3EA3BCD7EF87EFF04AC1CCD9E35EA00EC53478C5A645C02ABB599A3F28F17754CBEC51C5178A1A8430A4D1DB8ACBF43704CD61B7AE16924AAEE614E417E79A8A3CBADE6C88A37883AB4A2B907B68267B1CD1C55F14C510756349B63576F16A28BDAD679A09FE7DE3F432579023E24B053373082CBD6DEAA3B2F551EB719B65E1A8CED7897710E69B5ECA93A50ED73472C961F2581B1EF7BA945DAC843672DCAC374C3B44883A1B7DE5CBE116FBC1B93A4F4985C1211E7209B92A8F478DD7475DB1AC18723F46A5186F65A97BDECD9D93AD0708B6416B4814059548686A586A87E6BABB1D18F43ED8B5F6FD3D7C854E5C76E129A7650A61C7498B718981AA62C4564B05D598A9E9D8D40DB52F031D17D54163EC86AC8E1100B37AE7D1B6EDD0E4CA95940B75DA759C7AE31A8367DE1A2D8FBA8D05C587C0BFA3246706D0F744E0AF48B5D4A9F5F06FC85C0FE9405D9DB4B2BA5A87BDEC5B68ACD3DB317AF0986E18476982C7E0DE6810FE905B4E8700790BF8209CE3371EDD3E39353A14A737F2A269D24F1820E6593FCC2ED208D183D83D87D02B19C483CA0AAB00295720F6E90075F66F67FB251E7D95316FD2BFB7C4494FC0BF27F4D49C3639C42EBBF729EE3F8A9E77DE5AEF521DBAA891B6DA9F89237F3C5BAF9E56B3EF4C87A88C9463CB78E8525EAC38D64BD7AB0256098F23752ADCF01EF5A2EB75F892AECBAFEA9FC4B1F8F92C65F70F95D085EBEEFCA9A32557F10A2221D7F2CBC5144A84BB7EF83A54DB5F7C84F9CA5DA779BAC3AF5BE0F6BDAB47B1F75071393EECD6D5131721C7F267326447D0759835EB64E1126D985C1CB56B1B5E275503DDCA05D2B95B90E47E34A5907C11DBE8755C45BFE9485A8A3F975459DE968D85B3A951E84968E562CB32FF53155AAF5DB96C5ECB212A6216BEB4F5200B38DA206963A3FA0D265A89E68DEECB7AA27BA876715D1D640E6AE35A64389D036348655450CA8053A448DD13D321F84C69817516D4361DEDA11BD85BA74707EBBD716E159A0B89E4889F3E2E2B217265584BBAD8C2C7F0E98D9DE3222AA909FCFF4C50B3A5295C268C9555D74246F5077A2AD655D3A62DDC83077DB488BF5D111D4541335516526BB912AEBA3A3AAA9D0798BEA36659D8CAAECB0C55E353DA81E40359B7602C662E0945193587300456BC305C1ED0F4DD2C8DED7A60D17C398DBA2430D9AFC044D3C5FEDDF00266E38F1D715047D5C47D0E57C5ED9E706ADA2C2070B1C155D84F8C51DC4C0230EF122C6FE0AB89834D39074F6AFB5B06CDEAB7009BD1BF490E24D8AC99461B80CB8281375E14DF4B3423B9EE7E9C326FB0745C6980261D3A7A1FC07F431F503AFE4FB5A113CD640D0B3010BD1D2B5C43454BB7E2D91EE236408C4C4571E691E61B8090858F28016E019F6E18DA8DF2D5C03F7B50ABBE940DA178217FBF4D207EB188409C3A8C6939F4487BDF0E5C7FF038D59FAF20A5B0000, N'6.1.3-40302')
+GO
+SET IDENTITY_INSERT [dbo].[Languages] ON 
+
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (1, N'English', N'en', 1)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (2, N'فارسی', N'fa', 1)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (3, N'France', N'fr', 0)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (5, N'German', N'de', 0)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (6, N'Español', N'es', 0)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (7, N'Turkish ', N'tr', 0)
+GO
+INSERT [dbo].[Languages] ([LangID], [LangFullName], [Culture], [IsActive]) VALUES (8, N'Azerbaijan', N'az', 0)
+GO
+SET IDENTITY_INSERT [dbo].[Languages] OFF
+GO
+INSERT [dbo].[UserRoles] ([Id], [Name]) VALUES (N'ed28bedb-33d0-4afc-92e3-272f63b6d66c', N'Admin')
+GO
+INSERT [dbo].[UserRoles] ([Id], [Name]) VALUES (N'0465b225-4ea1-41dc-9187-a551ad28df87', N'Common')
+GO
+INSERT [dbo].[UserRoles] ([Id], [Name]) VALUES (N'4bcc9ce5-f7d9-4bc5-a847-81276b1ae872', N'NoAccess')
+GO
+INSERT [dbo].[Users] ([Id], [Email], [EmailConfirmed], [PasswordHash], [SecurityStamp], [PhoneNumber], [PhoneNumberConfirmed], [TwoFactorEnabled], [LockoutEndDateUtc], [LockoutEnabled], [AccessFailedCount], [UserName], [Discriminator]) VALUES (N'bfdd394c-bc6d-4733-947c-a6bc7486cfb0', N'behzad.khosravifar@gmail.com', 0, N'AEmo0bAhszLYmkqn3r1a9RFMGPDTZyauwvtCbGv5AzRVLWjTkysryl+mxjd25JRrNw==', N'a7e5b5ed-c74f-438a-a961-b5f021775f12', NULL, 0, 0, NULL, 1, 0, N'behzad.khosravifar@gmail.com', N'ApplicationUser')
+GO
+/****** Object:  Index [PK_ELMAH_Error]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_Error]') AND name = N'PK_ELMAH_Error')
+ALTER TABLE [dbo].[ELMAH_Error] ADD  CONSTRAINT [PK_ELMAH_Error] PRIMARY KEY NONCLUSTERED 
+(
+	[ErrorId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_ELMAH_Error_App_Time_Seq]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_Error]') AND name = N'IX_ELMAH_Error_App_Time_Seq')
+CREATE NONCLUSTERED INDEX [IX_ELMAH_Error_App_Time_Seq] ON [dbo].[ELMAH_Error]
+(
+	[Application] ASC,
+	[TimeUtc] DESC,
+	[Sequence] DESC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+/****** Object:  Index [IX_TrafficRankings]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[TrafficRankings]') AND name = N'IX_TrafficRankings')
+CREATE NONCLUSTERED INDEX [IX_TrafficRankings] ON [dbo].[TrafficRankings]
+(
+	[ModifyDate] ASC,
+	[RankID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[UserClaims]') AND name = N'IX_IdentityUser_Id')
+CREATE NONCLUSTERED INDEX [IX_IdentityUser_Id] ON [dbo].[UserClaims]
+(
+	[IdentityUser_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[UserInRoles]') AND name = N'IX_IdentityUser_Id')
+CREATE NONCLUSTERED INDEX [IX_IdentityUser_Id] ON [dbo].[UserInRoles]
+(
+	[IdentityUser_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_RoleId]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[UserInRoles]') AND name = N'IX_RoleId')
+CREATE NONCLUSTERED INDEX [IX_RoleId] ON [dbo].[UserInRoles]
+(
+	[RoleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [IX_IdentityUser_Id]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[UserLogins]') AND name = N'IX_IdentityUser_Id')
+CREATE NONCLUSTERED INDEX [IX_IdentityUser_Id] ON [dbo].[UserLogins]
+(
+	[IdentityUser_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [RoleNameIndex]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[UserRoles]') AND name = N'RoleNameIndex')
+CREATE UNIQUE NONCLUSTERED INDEX [RoleNameIndex] ON [dbo].[UserRoles]
+(
+	[Name] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+SET ANSI_PADDING ON
+
+GO
+/****** Object:  Index [UserNameIndex]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+IF NOT EXISTS (SELECT * FROM sys.indexes WHERE object_id = OBJECT_ID(N'[dbo].[Users]') AND name = N'UserNameIndex')
+CREATE UNIQUE NONCLUSTERED INDEX [UserNameIndex] ON [dbo].[Users]
+(
+	[UserName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, IGNORE_DUP_KEY = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_ContactMe_ModifyTime]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[ContactMe] ADD  CONSTRAINT [DF_ContactMe_ModifyTime]  DEFAULT (getutcdate()) FOR [ModifyUTC]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_ContactMe_IsRead]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[ContactMe] ADD  CONSTRAINT [DF_ContactMe_IsRead]  DEFAULT ((0)) FOR [IsRead]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_ELMAH_Error_ErrorId]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[ELMAH_Error] ADD  CONSTRAINT [DF_ELMAH_Error_ErrorId]  DEFAULT (newid()) FOR [ErrorId]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_Languages_IsActive]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Languages] ADD  CONSTRAINT [DF_Languages_IsActive]  DEFAULT ((1)) FOR [IsActive]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_NewsletterSubscribeEmails_Enable]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[NewsletterSubscribeEmails] ADD  CONSTRAINT [DF_NewsletterSubscribeEmails_Enable]  DEFAULT ((1)) FOR [Enable]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_Sitemap_LangId]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Sitemap] ADD  CONSTRAINT [DF_Sitemap_LangId]  DEFAULT ((1)) FOR [LangId]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF_Sitemap_LastModified]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[Sitemap] ADD  CONSTRAINT [DF_Sitemap_LastModified]  DEFAULT (getutcdate()) FOR [LastModified]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__TrafficRa__Modif__595B4002]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[TrafficRankings] ADD  CONSTRAINT [DF__TrafficRa__Modif__595B4002]  DEFAULT (getdate()) FOR [ModifyDate]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[DF__TrafficRa__IsAct__5A4F643B]') AND type = 'D')
+BEGIN
+ALTER TABLE [dbo].[TrafficRankings] ADD  CONSTRAINT [DF__TrafficRa__IsAct__5A4F643B]  DEFAULT ((1)) FOR [IsActive]
+END
+
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserClaims_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserClaims]'))
+ALTER TABLE [dbo].[UserClaims]  WITH CHECK ADD  CONSTRAINT [FK_dbo.UserClaims_dbo.Users_IdentityUser_Id] FOREIGN KEY([IdentityUser_Id])
+REFERENCES [dbo].[Users] ([Id])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserClaims_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserClaims]'))
+ALTER TABLE [dbo].[UserClaims] CHECK CONSTRAINT [FK_dbo.UserClaims_dbo.Users_IdentityUser_Id]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserInRoles_dbo.UserRoles_RoleId]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserInRoles]'))
+ALTER TABLE [dbo].[UserInRoles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.UserInRoles_dbo.UserRoles_RoleId] FOREIGN KEY([RoleId])
+REFERENCES [dbo].[UserRoles] ([Id])
+ON DELETE CASCADE
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserInRoles_dbo.UserRoles_RoleId]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserInRoles]'))
+ALTER TABLE [dbo].[UserInRoles] CHECK CONSTRAINT [FK_dbo.UserInRoles_dbo.UserRoles_RoleId]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserInRoles_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserInRoles]'))
+ALTER TABLE [dbo].[UserInRoles]  WITH CHECK ADD  CONSTRAINT [FK_dbo.UserInRoles_dbo.Users_IdentityUser_Id] FOREIGN KEY([IdentityUser_Id])
+REFERENCES [dbo].[Users] ([Id])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserInRoles_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserInRoles]'))
+ALTER TABLE [dbo].[UserInRoles] CHECK CONSTRAINT [FK_dbo.UserInRoles_dbo.Users_IdentityUser_Id]
+GO
+IF NOT EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserLogins_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserLogins]'))
+ALTER TABLE [dbo].[UserLogins]  WITH CHECK ADD  CONSTRAINT [FK_dbo.UserLogins_dbo.Users_IdentityUser_Id] FOREIGN KEY([IdentityUser_Id])
+REFERENCES [dbo].[Users] ([Id])
+GO
+IF  EXISTS (SELECT * FROM sys.foreign_keys WHERE object_id = OBJECT_ID(N'[dbo].[FK_dbo.UserLogins_dbo.Users_IdentityUser_Id]') AND parent_object_id = OBJECT_ID(N'[dbo].[UserLogins]'))
+ALTER TABLE [dbo].[UserLogins] CHECK CONSTRAINT [FK_dbo.UserLogins_dbo.Users_IdentityUser_Id]
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_GetErrorsXml]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_GetErrorsXml]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[ELMAH_GetErrorsXml] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[ELMAH_GetErrorsXml]
+(
+    @Application NVARCHAR(60),
+    @PageIndex INT = 0,
+    @PageSize INT = 15,
+    @TotalCount INT OUTPUT
+)
+AS 
+
+    SET NOCOUNT ON
+
+    DECLARE @FirstTimeUTC DATETIME
+    DECLARE @FirstSequence INT
+    DECLARE @StartRow INT
+    DECLARE @StartRowIndex INT
+
+    SELECT 
+        @TotalCount = COUNT(1) 
+    FROM 
+        [ELMAH_Error]
+    WHERE 
+        [Application] = @Application
+
+    -- Get the ID of the first error for the requested page
+
+    SET @StartRowIndex = @PageIndex * @PageSize + 1
+
+    IF @StartRowIndex <= @TotalCount
+    BEGIN
+
+        SET ROWCOUNT @StartRowIndex
+
+        SELECT  
+            @FirstTimeUTC = [TimeUtc],
+            @FirstSequence = [Sequence]
+        FROM 
+            [ELMAH_Error]
+        WHERE   
+            [Application] = @Application
+        ORDER BY 
+            [TimeUtc] DESC, 
+            [Sequence] DESC
+
+    END
+    ELSE
+    BEGIN
+
+        SET @PageSize = 0
+
+    END
+
+    -- Now set the row count to the requested page size and get
+    -- all records below it for the pertaining application.
+
+    SET ROWCOUNT @PageSize
+
+    SELECT 
+        errorId     = [ErrorId], 
+        application = [Application],
+        host        = [Host], 
+        type        = [Type],
+        source      = [Source],
+        message     = [Message],
+        [user]      = [User],
+        statusCode  = [StatusCode], 
+        time        = CONVERT(VARCHAR(50), [TimeUtc], 126) + 'Z'
+    FROM 
+        [ELMAH_Error] error
+    WHERE
+        [Application] = @Application
+    AND
+        [TimeUtc] <= @FirstTimeUTC
+    AND 
+        [Sequence] <= @FirstSequence
+    ORDER BY
+        [TimeUtc] DESC, 
+        [Sequence] DESC
+    FOR
+        XML AUTO
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_GetErrorXml]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_GetErrorXml]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[ELMAH_GetErrorXml] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[ELMAH_GetErrorXml]
+(
+    @Application NVARCHAR(60),
+    @ErrorId UNIQUEIDENTIFIER
+)
+AS
+
+    SET NOCOUNT ON
+
+    SELECT 
+        [AllXml]
+    FROM 
+        [ELMAH_Error]
+    WHERE
+        [ErrorId] = @ErrorId
+    AND
+        [Application] = @Application
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[ELMAH_LogError]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ELMAH_LogError]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[ELMAH_LogError] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[ELMAH_LogError]
+(
+    @ErrorId UNIQUEIDENTIFIER,
+    @Application NVARCHAR(60),
+    @Host NVARCHAR(30),
+    @Type NVARCHAR(100),
+    @Source NVARCHAR(60),
+    @Message NVARCHAR(500),
+    @User NVARCHAR(50),
+    @AllXml NTEXT,
+    @StatusCode INT,
+    @TimeUtc DATETIME
+)
+AS
+
+    SET NOCOUNT ON
+
+    INSERT
+    INTO
+        [ELMAH_Error]
+        (
+            [ErrorId],
+            [Application],
+            [Host],
+            [Type],
+            [Source],
+            [Message],
+            [User],
+            [AllXml],
+            [StatusCode],
+            [TimeUtc]
+        )
+    VALUES
+        (
+            @ErrorId,
+            @Application,
+            @Host,
+            @Type,
+            @Source,
+            @Message,
+            @User,
+            @AllXml,
+            @StatusCode,
+            @TimeUtc
+        )
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[sp_GetRankingUpdateInfo]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_GetRankingUpdateInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[sp_GetRankingUpdateInfo] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[sp_GetRankingUpdateInfo]
+	@DayDate DATETIME
+AS
+BEGIN
+	SELECT tr.RankID,
+	       tr.ModifyDate,
+	       CONVERT(TIME, tr2.ModifyDate),
+	       tr.GlobalRanking,
+	       tr.IranRanking,
+	       tr.IsActive,
+	       DATEDIFF(second, tr2.ModifyDate, tr.ModifyDate) AS TimerDurSec,
+	       DATEDIFF(MINUTE, tr2.ModifyDate, tr.ModifyDate) AS TimerDurMin
+	FROM   dbo.TrafficRankings tr,
+	       dbo.TrafficRankings tr2
+	WHERE  tr.ModifyDate > @DayDate
+	       AND tr2.ModifyDate > @DayDate
+	       AND tr.RankID = tr2.RankID + 1
+	ORDER BY
+	       tr2.ModifyDate DESC
+END
+
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[sp_GetRankingUpdatesInfo]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_GetRankingUpdatesInfo]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[sp_GetRankingUpdatesInfo] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[sp_GetRankingUpdatesInfo]
+	@DayDate DATETIME
+AS
+BEGIN
+	DECLARE @temp TABLE (
+	            RankID BIGINT,
+	            ModifyDate DATETIME,
+	            NextTime TIME,
+	            GlobalRanking INT,
+	            IranRanking INT,
+	            IsActive BIT,
+	            TimerDurSec INT,
+	            TimerDurMin INT
+	        )
+	
+	INSERT INTO @temp
+	SELECT tr.RankID,
+	       tr.ModifyDate,
+	       tr2.ModifyDate AS PreviewsDate,
+	       tr.GlobalRanking,
+	       tr.IranRanking,
+	       tr.IsActive,
+	       DATEDIFF(second, tr2.ModifyDate, tr.ModifyDate) AS TimerDurSec,
+	       DATEDIFF(MINUTE, tr2.ModifyDate, tr.ModifyDate) AS TimerDurMin
+	FROM   [xomorod.com_xomorod].dbo.TrafficRankings tr,
+	       [xomorod.com_xomorod].dbo.TrafficRankings tr2
+	WHERE  tr.ModifyDate > @DayDate
+	       AND tr2.ModifyDate > @DayDate
+	       AND tr.RankID = tr2.RankID + 1
+	ORDER BY
+	       tr2.ModifyDate DESC
+	
+	SELECT * FROM @temp
+	
+	SELECT SUM(t.TimerDurSec) / COUNT(1)  AS AverageTimeDurSec
+	FROM   @temp                             t
+	WHERE  t.TimerDurSec > 2 -- less lower bound
+END
+
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Insert_ContactMe]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Insert_ContactMe]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[sp_Insert_ContactMe] AS' 
+END
+GO
+-- =============================================
+-- Author:		Behzad Khosravifar
+-- Create date: 2016/06/07
+-- Description:	Insert data in to ContactMe table
+-- =============================================
+ALTER PROCEDURE [dbo].[sp_Insert_ContactMe]
+    @name NVARCHAR(MAX) ,
+    @email NVARCHAR(MAX) ,
+    @subject NVARCHAR(MAX) ,
+    @message NVARCHAR(MAX)
+AS
+    BEGIN
+        BEGIN TRY
+            BEGIN TRANSACTION
+            INSERT  INTO [dbo].[ContactMe]
+                    ( [Name] ,
+                      [Email] ,
+                      [Subject] ,
+                      [Message],
+					  [UserId]
+                    )
+            VALUES  ( @name ,
+                      @email ,
+                      @subject ,
+                      @message,
+					  dbo.fn_GetFirstAdminUserID()
+                    )
+
+            COMMIT TRANSACTION
+        END TRY 
+        BEGIN CATCH
+		-- IF @@TRANCOUNT > 0
+            IF XACT_STATE() <> 0
+                ROLLBACK TRANSACTION	
+			
+            DECLARE @err_msg NVARCHAR(MAX) = ERROR_MESSAGE();
+
+            RAISERROR(@err_msg, 18, 255);
+        END CATCH
+    END
+
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[sp_Insert_NewsletterSubscribeEmails]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_Insert_NewsletterSubscribeEmails]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[sp_Insert_NewsletterSubscribeEmails] AS' 
+END
+GO
+-- =============================================
+-- Author:		Behzad Khosravifar
+-- Create date: 2016.06.09
+-- Description:	Insert into NewsletterSubscribeEmails table's
+-- =============================================
+ALTER PROCEDURE [dbo].[sp_Insert_NewsletterSubscribeEmails]
+	@Email NVARCHAR(128)
+AS
+BEGIN
+	IF EXISTS (
+	       SELECT 1
+	       FROM   [dbo].[NewsletterSubscribeEmails]
+	       WHERE  EmailAddress = LOWER(@Email)
+	   )
+	    RAISERROR(N'DuplicateEmailError', 18, 1)
+	ELSE
+	BEGIN
+	    INSERT INTO [dbo].[NewsletterSubscribeEmails]
+	      (
+	        [EmailAddress]
+	      )
+	    VALUES
+	      (
+	        LOWER(@Email)
+	      )
+	END
+END
+
+
+
+GO
+/****** Object:  StoredProcedure [dbo].[sp_TrafficRankings_Insert]    Script Date: 16/11/1395 09:29:18 ب.ظ ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[sp_TrafficRankings_Insert]') AND type in (N'P', N'PC'))
+BEGIN
+EXEC dbo.sp_executesql @statement = N'CREATE PROCEDURE [dbo].[sp_TrafficRankings_Insert] AS' 
+END
+GO
+
+ALTER PROCEDURE [dbo].[sp_TrafficRankings_Insert]
+    @GlobalRank INT ,
+    @IranRank INT
+AS
+    BEGIN
+        BEGIN TRY
+            BEGIN TRANSACTION
+		
+            IF NOT EXISTS ( SELECT TOP ( 1 )
+                                    1
+                            FROM    TrafficRankings tr
+                            WHERE   CONVERT(DATE, tr.ModifyDate) = CONVERT(DATE, GETDATE())
+                                    AND tr.GlobalRanking = @GlobalRank
+                                    AND tr.IranRanking = @IranRank
+                                    AND tr.IsActive = 1 )
+                BEGIN
+                    INSERT  INTO TrafficRankings
+                            ( -- RankID -- this column value is auto-generated
+                              GlobalRanking ,
+                              IranRanking ,
+                              IsActive
+		                    )
+                    VALUES  ( @GlobalRank ,
+                              @IranRank ,
+                              1
+		                    )
+                END
+		
+            COMMIT TRANSACTION
+        END TRY
+        BEGIN CATCH
+            ROLLBACK TRANSACTION
+		
+            DECLARE @err_msg NVARCHAR(MAX) = ERROR_MESSAGE();
+
+            RAISERROR(@err_msg, 18, 255);
+        END CATCH
+    END
+
+
+
+GO
+USE [master]
+GO
+ALTER DATABASE [IXL] SET  READ_WRITE 
+GO
