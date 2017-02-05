@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Dapper;
+using IXL.Resources;
 
 namespace IXL.Controllers
 {
@@ -11,20 +12,20 @@ namespace IXL.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Title = Localization.Home;
+            ViewBag.BodyClass = "main";
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
+            ViewBag.Title = Localization.About;
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
+            ViewBag.Title = Localization.Contact;
             return View();
         }
     }

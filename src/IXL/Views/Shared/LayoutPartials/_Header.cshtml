@@ -1,8 +1,9 @@
-﻿<!--header starts-->
+﻿@using IXL.Resources
+<!--header starts-->
 <header>
     <div class="container">
         <div class="logo">
-            <a href="index.html" title="Kids Life"><img src="images/logo.png" alt="Kids Life" title="Kids Life"></a>
+            <a href="@Url.Action("Index", "Home")" title="@Localization.WebsiteSiteName"><img src="@Url.Content("~/Content/images/logo.png")" alt="Kids Life" title="Kids Life"></a>
         </div>
         <div class="contact-details">
             <p class="mail">
@@ -41,9 +42,9 @@
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="mustard"> <a href="about.html"> About us </a> </li>
-                    <li class="green"> <a href="our-staffs.html"> Our Staffs </a> </li>
-                    <li class="yellow"> <a href="services.html"> Services </a> </li>
+                    <li class="mustard"> @Html.ActionLink("About us", "About", "Home") </li>
+                    <li class="green"> @Html.ActionLink("Our Staffs", "our-staffs", "Home") </li>
+                    <li class="yellow"> @Html.ActionLink("Services", "Services", "Home") </li>
                     <li class="menu-item-simple-parent menu-item-depth-0 blue">
                         <a href="portfolio-four-column.html" title="">Portfolio</a>
                         <ul class="sub-menu">
@@ -124,10 +125,12 @@
                                                         <h5><a href="blog-detail.html"> Create your Works </a></h5>
                                                     </div>
                                                     <div class="entry-metadata">
-                                                        <p class="author"><a href="#"> By Admin </a>
+                                                        <p class="author">
+                                                            <a href="#"> By Admin </a>
                                                         </p>
                                                         <span class=""> | </span>
-                                                        <p class="comments"><a href="#"><span class="fa fa-comment"></span></a>
+                                                        <p class="comments">
+                                                            <a href="#"><span class="fa fa-comment"></span></a>
                                                         </p>
                                                         <p class="date"> 10 Aug </p>
                                                     </div>
@@ -145,10 +148,12 @@
                                                         <h5><a href="blog-detail.html"> Best of the Blogs </a></h5>
                                                     </div>
                                                     <div class="entry-metadata">
-                                                        <p class="author"><a href="#"> By Admin </a>
+                                                        <p class="author">
+                                                            <a href="#"> By Admin </a>
                                                         </p>
                                                         <span class=""> | </span>
-                                                        <p class="comments"><a href="#"><span class="fa fa-comment"></span></a>
+                                                        <p class="comments">
+                                                            <a href="#"><span class="fa fa-comment"></span></a>
                                                         </p>
                                                         <p class="date"> 10 Aug </p>
                                                     </div>
@@ -182,10 +187,10 @@
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="purple"><a href="shop.html" title="">Shop</a></li>
-                    <li class="pink"><a href="contact.html" title="">Contact us</a></li>
+                    <li class="purple">@Html.ActionLink("Shop", "Shop", "Home") </li>
+                    <li class="pink">@Html.ActionLink("Contact us", "Contact", "Home") </li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </nav>
             <!--nav ends-->
 

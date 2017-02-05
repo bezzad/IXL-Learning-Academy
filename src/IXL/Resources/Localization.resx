@@ -851,4 +851,7 @@ We will use your personal characteristics, just to respond to you and to prepare
   <data name="_6month" xml:space="preserve">
     <value>6m</value>
   </data>
+  <data name="lang" xml:space="preserve">
+    <value>en-us</value>
+  </data>
 </root>

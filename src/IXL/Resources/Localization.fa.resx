@@ -130,7 +130,7 @@
     <value>همه</value>
   </data>
   <data name="AllRightsReserved" xml:space="preserve">
-    <value>کليه حقوق اين سايت متعلق به شرکت زمرد می‌باشد.</value>
+    <value>کليه حقوق اين سايت محفوظ می باشد</value>
   </data>
   <data name="ANALYZE" xml:space="preserve">
     <value>بررسی</value>
@@ -842,5 +842,8 @@
   </data>
   <data name="_6month" xml:space="preserve">
     <value>6ماه</value>
+  </data>
+  <data name="lang" xml:space="preserve">
+    <value>fa-ir</value>
   </data>
 </root>
