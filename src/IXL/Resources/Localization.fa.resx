@@ -120,27 +120,6 @@
   <data name="About" xml:space="preserve">
     <value>درباره ما</value>
   </data>
-  <data name="AboutUsDescriptionP1" xml:space="preserve">
-    <value>ما در زمرد، از ابزار مناسب برای کارها استفاده میکنیم. تیم های مختلف نیازهای مختلفی دارند، و ما به کارمندان مان اختیار حل مشکلات با روش ها و تکنولوژی ها خودشان را داده ایم.</value>
-  </data>
-  <data name="AboutUsDescriptionP2" xml:space="preserve">
-    <value>به تیم فعال ما بپیوندید. شما در کنار بهترین رهبران و ذهن فنی در فضای کاملا آزاد خواهید بود.</value>
-  </data>
-  <data name="AboutUsDescriptionP3" xml:space="preserve">
-    <value>ما یک محیط کار صمیمی و بسیار رقابتی همراه با پاداش و مزایای کارکنان و با فرهنگ حمایت از یکدیگر را برایتان فراهم میکنیم.</value>
-  </data>
-  <data name="AboutUsSkill1" xml:space="preserve">
-    <value>استفاده از تکنولوژی روز</value>
-  </data>
-  <data name="AboutUsSkill2" xml:space="preserve">
-    <value>ساخت اپ سیستم عامل ویندوز</value>
-  </data>
-  <data name="AboutUsSkill3" xml:space="preserve">
-    <value>توسعه پروژه های وب</value>
-  </data>
-  <data name="AboutUsSkill4" xml:space="preserve">
-    <value>توسعه برنامه های آموزشی موبایل</value>
-  </data>
   <data name="Add_phone_number" xml:space="preserve">
     <value>اضافه کردن شماره موبایل</value>
   </data>
@@ -159,9 +138,6 @@
   <data name="Android" xml:space="preserve">
     <value>اندروید</value>
   </data>
-  <data name="AndroidService" xml:space="preserve">
-    <value>محقق شدن ایده های شما در قالب برنامه های اندرویدی در کمترین زمان ممکن</value>
-  </data>
   <data name="An_error_has_occurred" xml:space="preserve">
     <value>خطایی رخ داده است.</value>
   </data>
@@ -170,9 +146,6 @@
   </data>
   <data name="Apple" xml:space="preserve">
     <value>اپل</value>
-  </data>
-  <data name="AppleService" xml:space="preserve">
-    <value>ساخت برنامه های مالتی پلتفرم با تکنولوژی زامارین برای اپل و دیگر سیستم عامل ها</value>
   </data>
   <data name="AssociateYourAccount" xml:space="preserve">
     <value>ارتباط با حساب {0} شما</value>
@@ -195,14 +168,8 @@
   <data name="CafeBazar" xml:space="preserve">
     <value>کافه بازار</value>
   </data>
-  <data name="CafebazarLogoUrl" xml:space="preserve">
-    <value>~/Content/images/cafebazar.png</value>
-  </data>
   <data name="CafebazarTitle" xml:space="preserve">
     <value>محصولات ما در فروشگاه اندرویدی کافه بازار</value>
-  </data>
-  <data name="CafebazarXomorodLink" xml:space="preserve">
-    <value>https://cafebazaar.ir/search/?q=xomorod&amp;l=fa</value>
   </data>
   <data name="CaptchaHasNotValid" xml:space="preserve">
     <value>عدم تشخیص هویت انسان از ربات!</value>
@@ -226,13 +193,13 @@
     <value>کد</value>
   </data>
   <data name="CompanyAddress" xml:space="preserve">
-    <value>ایران - تبریز - بلوار توانیر</value>
+    <value>ایران - تبریز - آبرسان - کلانتر کوچه - کلانتر کوچه دوم</value>
   </data>
   <data name="CompanyLocation" xml:space="preserve">
     <value>موقعیت جغرافیایی شرکت</value>
   </data>
   <data name="CompanyName" xml:space="preserve">
-    <value>شرکت زمرد</value>
+    <value>آکادمی خلاق</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>تایید رمز عبور</value>
@@ -248,15 +215,6 @@
   </data>
   <data name="ContactUs" xml:space="preserve">
     <value>تماس با ما</value>
-  </data>
-  <data name="ContactUsSubTitle1" xml:space="preserve">
-    <value>آماده اید تا پروژه بعدی را با ما شروع کنید؟ عالیه!</value>
-  </data>
-  <data name="ContactUsSubTitle2" xml:space="preserve">
-    <value>شماره تماس یا آدرس ایمیلتان را برایمان ارسال کنید تا در اصرع وقت با شما تماس بگیریم</value>
-  </data>
-  <data name="ContactUsSubTitle3" xml:space="preserve">
-    <value>برای تماس با اعضای تیم میتوانید آنها را در شبکه های اجتماعی دنبال کنید یا از طریق ایمیل با آنها در تماس باشید</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>کپی رایت</value>
@@ -420,14 +378,8 @@
   <data name="MoreDownloadNow" xml:space="preserve">
     <value>بیشتر دانلود کنید حالا !</value>
   </data>
-  <data name="MyKetLogoUrl" xml:space="preserve">
-    <value>~/Content/images/myket.png</value>
-  </data>
   <data name="MyKetTitle" xml:space="preserve">
     <value>محصولات ما در فروشگاه اندرویدی مایکت</value>
-  </data>
-  <data name="MyKetXomorodLink" xml:space="preserve">
-    <value>https://myket.ir/search/xomorod?lang=fa</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>نام</value>
@@ -442,7 +394,7 @@
     <value>آخرین اخبار</value>
   </data>
   <data name="NewsUrl" xml:space="preserve">
-    <value>http://news.xomorod.com/fa</value>
+    <value>http://news.khallagh.com/fa</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>خیر</value>
@@ -482,9 +434,6 @@
   </data>
   <data name="Portfolio" xml:space="preserve">
     <value>محصولات</value>
-  </data>
-  <data name="PortfolioMoreInfo" xml:space="preserve">
-    <value>اکثر پروژه های ما کد باز بوده و شما میتوانید آنها را از گیت هاب دانلود کنید.</value>
   </data>
   <data name="PortfolioSubTitle" xml:space="preserve">
     <value>بهترین های محصولات ما</value>
@@ -699,7 +648,7 @@
     <value>ارسال کد تاییدیه</value>
   </data>
   <data name="SeoKeywords" xml:space="preserve">
-    <value>زمرد ,نرم افزار ,اخبار تکنولوژی, zomorod, رایگان ,برنامه های موبایل ,کتاب ساز, طراحی توسعه وب سایت, تکنولوژی جهانی, f56ce249532f51527774</value>
+    <value>مدرسه, خلاق, آکادمی, مدرسان خلاق, آموزشگاه, آموزش آنلاین, پیش دبستانی, کودک, هوش و خلاقیت ریاضی, علوم, هنر, تربیت, آموزش, درس, تبریز</value>
   </data>
   <data name="ServiceSubTitle" xml:space="preserve">
     <value>ارائه می دهیم آنچه را که نیاز دارید!</value>
@@ -709,15 +658,6 @@
   </data>
   <data name="Setting" xml:space="preserve">
     <value>تنظیمات</value>
-  </data>
-  <data name="ShonizLogoUrl" xml:space="preserve">
-    <value>~/Content/images/bwShonizFa.png</value>
-  </data>
-  <data name="ShonizTitle" xml:space="preserve">
-    <value>سایت شونیز</value>
-  </data>
-  <data name="ShonizUrl" xml:space="preserve">
-    <value>http://www.shoniz.com/</value>
   </data>
   <data name="ShowcaseClients" xml:space="preserve">
     <value>نمونه کارهای ما را اینجا ببینید</value>
@@ -772,10 +712,10 @@
     <value>توییتر</value>
   </data>
   <data name="TwitterCreator" xml:space="preserve">
-    <value>@xomorod</value>
+    <value>@khallagh</value>
   </data>
   <data name="TwitterSite" xml:space="preserve">
-    <value>@xomorod</value>
+    <value>@khallagh</value>
   </data>
   <data name="TwoLetterISOLanguageName" xml:space="preserve">
     <value>fa</value>
@@ -822,35 +762,35 @@
   <data name="WindowsService" xml:space="preserve">
     <value>تمام نرم افزارهای پلتفرم ویندوز دسکتاپ و وب پشتیبانی می شود</value>
   </data>
-  <data name="Xomorod" xml:space="preserve">
+  <data name="Website" xml:space="preserve">
     <value>زمرد</value>
   </data>
-  <data name="XomorodDescription" xml:space="preserve">
-    <value>شرکت بین المللی زمرد با خدمات اینترنتی و محصولات نرم افزاری آموزشی، کتابخانه ابری، اخبار تکنولوژی</value>
+  <data name="WebsiteDescription" xml:space="preserve">
+    <value>شناخت جدید از دنیای جدید بچه ها، نمی توانیم چشممان را بر دنیا ببندیم ولی میتوانیم چشم بچه ها را به گونه ای صحیح بر دنیای شیشه ای اینترنت باز کنیم</value>
   </data>
-  <data name="XomorodMoreInfo" xml:space="preserve">
-    <value>شرکت نرم افزاری زمرد یک شرکت کوچک جهت فراهم کردن نیازهای شما در زمینه ساخت برنامه های تحت وب، ویندوز، اندروید، اپل می باشد. اکثر برنامه ها در زمرد بصورت کد باز بوده و می توان آن را رایگان دانلود نموده و به راحتی استفاده کرد</value>
+  <data name="WebsiteMoreInfo" xml:space="preserve">
+    <value>{0} بنیانگذار سیستم آموزشی </value>
   </data>
-  <data name="XomorodRanking" xml:space="preserve">
-    <value>رتبه بندی سایت زمرد</value>
+  <data name="WebsiteRanking" xml:space="preserve">
+    <value>رتبه بندی سایت {0}</value>
   </data>
-  <data name="XomorodService" xml:space="preserve">
+  <data name="WebsiteService" xml:space="preserve">
     <value>راه حل مشکلاتتان را از ما بخواهید</value>
   </data>
-  <data name="XomorodSiteName" xml:space="preserve">
-    <value>Xomorod</value>
+  <data name="WebsiteSiteName" xml:space="preserve">
+    <value>Khallagh Academy</value>
   </data>
-  <data name="XomorodSlogan" xml:space="preserve">
+  <data name="WebsiteSlogan" xml:space="preserve">
     <value>باهوش تر زندگی کنید</value>
   </data>
-  <data name="XomorodSubject" xml:space="preserve">
-    <value>اخبار تکنولوژی، تولید نرم افزار، برنامه های موبایل</value>
+  <data name="WebsiteSubject" xml:space="preserve">
+    <value>هوش و خلاقیت ریاضی - آموزش های آنلاین</value>
   </data>
-  <data name="XomorodTitle" xml:space="preserve">
-    <value>شرکت زمرد - اخبار و نرم افزار رایگان</value>
+  <data name="WebsiteTitle" xml:space="preserve">
+    <value>آکادمی خلاق (هوش و خلاقیت)</value>
   </data>
-  <data name="XomorodUrl" xml:space="preserve">
-    <value>http://www.xomorod.com</value>
+  <data name="WebsiteUrl" xml:space="preserve">
+    <value>http://www.khallagh.org</value>
   </data>
   <data name="Yahoo" xml:space="preserve">
     <value>یاهو</value>

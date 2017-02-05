@@ -115,69 +115,6 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to At Xomorod, it&apos;s about using the right tool for the job. If it&apos;s not a nail, we won&apos;t use a hammer. Different teams have different needs, and we let them dictate how they solve their problems, and what technologies they use..
-        /// </summary>
-        public static string AboutUsDescriptionP1 {
-            get {
-                return ResourceManager.GetString("AboutUsDescriptionP1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Come join a fun team at a fast growing start-up and be part of the mobile revolution. You will work with some of the best leaders and technical minds in the mobile space..
-        /// </summary>
-        public static string AboutUsDescriptionP2 {
-            get {
-                return ResourceManager.GetString("AboutUsDescriptionP2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to We provide a highly competitive package with excellent compensation, bonuses, employee benefits, stock options and a friendly, supportive culture..
-        /// </summary>
-        public static string AboutUsDescriptionP3 {
-            get {
-                return ResourceManager.GetString("AboutUsDescriptionP3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Use High Technology.
-        /// </summary>
-        public static string AboutUsSkill1 {
-            get {
-                return ResourceManager.GetString("AboutUsSkill1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Create Windows Applications.
-        /// </summary>
-        public static string AboutUsSkill2 {
-            get {
-                return ResourceManager.GetString("AboutUsSkill2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Developing Web Projects.
-        /// </summary>
-        public static string AboutUsSkill3 {
-            get {
-                return ResourceManager.GetString("AboutUsSkill3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Deploying learning and mobile applications.
-        /// </summary>
-        public static string AboutUsSkill4 {
-            get {
-                return ResourceManager.GetString("AboutUsSkill4", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add a phone number.
         /// </summary>
         public static string Add_phone_number {
@@ -241,15 +178,6 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Realize your ideas in the form of Android apps at the least possible time.
-        /// </summary>
-        public static string AndroidService {
-            get {
-                return ResourceManager.GetString("AndroidService", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to AOL.
         /// </summary>
         public static string AOL {
@@ -264,15 +192,6 @@ namespace IXL.Resources {
         public static string Apple {
             get {
                 return ResourceManager.GetString("Apple", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Build multi-platform applications with Xamarin technology for iOS and other platforms.
-        /// </summary>
-        public static string AppleService {
-            get {
-                return ResourceManager.GetString("AppleService", resourceCulture);
             }
         }
         
@@ -340,29 +259,11 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ~/Content/images/cafebazar.png.
-        /// </summary>
-        public static string CafebazarLogoUrl {
-            get {
-                return ResourceManager.GetString("CafebazarLogoUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Cafebazar android market for us products.
         /// </summary>
         public static string CafebazarTitle {
             get {
                 return ResourceManager.GetString("CafebazarTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://cafebazaar.ir/search/?q=xomorod&amp;l=en.
-        /// </summary>
-        public static string CafebazarXomorodLink {
-            get {
-                return ResourceManager.GetString("CafebazarXomorodLink", resourceCulture);
             }
         }
         
@@ -430,7 +331,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tavanir Blvd, Tabriz, Iran.
+        ///   Looks up a localized string similar to Kalantar No 2 Alley , Kalantar Street, Abresan, Tabriz, Iran.
         /// </summary>
         public static string CompanyAddress {
             get {
@@ -448,11 +349,11 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xomorod Corporation.
+        ///   Looks up a localized string similar to Khallagh Academy.
         /// </summary>
-        public static string CompanyName1 {
+        public static string CompanyName {
             get {
-                return ResourceManager.GetString("CompanyName1", resourceCulture);
+                return ResourceManager.GetString("CompanyName", resourceCulture);
             }
         }
         
@@ -498,33 +399,6 @@ namespace IXL.Resources {
         public static string ContactUs {
             get {
                 return ResourceManager.GetString("ContactUs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Ready to start your next project with us? That&apos;s great!.
-        /// </summary>
-        public static string ContactUsSubTitle1 {
-            get {
-                return ResourceManager.GetString("ContactUsSubTitle1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Give us a call or send us an email and we will get back to you as soon as possible!.
-        /// </summary>
-        public static string ContactUsSubTitle2 {
-            get {
-                return ResourceManager.GetString("ContactUsSubTitle2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to To contact the team members can follow them on social networks or via email if you communicate with them..
-        /// </summary>
-        public static string ContactUsSubTitle3 {
-            get {
-                return ResourceManager.GetString("ContactUsSubTitle3", resourceCulture);
             }
         }
         
@@ -1024,29 +898,11 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ~/Content/images/myket.png.
-        /// </summary>
-        public static string MyKetLogoUrl {
-            get {
-                return ResourceManager.GetString("MyKetLogoUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Myket android market for us products.
         /// </summary>
         public static string MyKetTitle {
             get {
                 return ResourceManager.GetString("MyKetTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to https://myket.ir/search/xomorod?lang=en.
-        /// </summary>
-        public static string MyKetXomorodLink {
-            get {
-                return ResourceManager.GetString("MyKetXomorodLink", resourceCulture);
             }
         }
         
@@ -1087,7 +943,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://news.xomorod.com.
+        ///   Looks up a localized string similar to http://news.khallagh.com.
         /// </summary>
         public static string NewsUrl {
             get {
@@ -1209,15 +1065,6 @@ namespace IXL.Resources {
         public static string Portfolio {
             get {
                 return ResourceManager.GetString("Portfolio", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Many of our projects are open source and free. You can download from GitHub..
-        /// </summary>
-        public static string PortfolioMoreInfo {
-            get {
-                return ResourceManager.GetString("PortfolioMoreInfo", resourceCulture);
             }
         }
         
@@ -1856,20 +1703,11 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to xomorod, corporation, software, iOs, windows, tech, news, zomorod, free, .Net, libraries, mobile, applications, android, fast book, website, web, world technology, f56ce249532f51527774.
+        ///   Looks up a localized string similar to khallagh, khalag, khallag, khalagh, school, academy, ixl, online school, amoozesh, koodak, tarbiyat, madreseh, preschool, girl, boy, baby academy, tabriz, amoozeshgah, tizhooshan, inteligence school.
         /// </summary>
         public static string SeoKeywords {
             get {
                 return ResourceManager.GetString("SeoKeywords", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to We&apos;ve got what you need!.
-        /// </summary>
-        public static string ServiceSubTitle {
-            get {
-                return ResourceManager.GetString("ServiceSubTitle", resourceCulture);
             }
         }
         
@@ -1892,33 +1730,6 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ~/Content/images/bwShonizEn.png.
-        /// </summary>
-        public static string ShonizLogoUrl {
-            get {
-                return ResourceManager.GetString("ShonizLogoUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shoniz web site.
-        /// </summary>
-        public static string ShonizTitle {
-            get {
-                return ResourceManager.GetString("ShonizTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to http://www.shoniz.com/.
-        /// </summary>
-        public static string ShonizUrl {
-            get {
-                return ResourceManager.GetString("ShonizUrl", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Our Business Showcase.
         /// </summary>
         public static string ShowcaseClients {
@@ -1937,7 +1748,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sitemap of Xomorod.co.
+        ///   Looks up a localized string similar to Sitemap of {0}.
         /// </summary>
         public static string SitemapDescription {
             get {
@@ -1946,7 +1757,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xomorod Sitemap.
+        ///   Looks up a localized string similar to {0} Sitemap.
         /// </summary>
         public static string SiteNameSiteMap {
             get {
@@ -2083,7 +1894,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @xomorod.
+        ///   Looks up a localized string similar to @khallaghac.
         /// </summary>
         public static string TwitterCreator {
             get {
@@ -2092,7 +1903,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to @xomorod.
+        ///   Looks up a localized string similar to @khallaghac.
         /// </summary>
         public static string TwitterSite {
             get {
@@ -2209,6 +2020,96 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Khalagh Academy.
+        /// </summary>
+        public static string Website {
+            get {
+                return ResourceManager.GetString("Website", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}. multinational technology company specializing in Internet-related services, Include learning, cloud books, tech news and software developing.
+        /// </summary>
+        public static string WebsiteDescription {
+            get {
+                return ResourceManager.GetString("WebsiteDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} has small software company to provide what you need in the field of web applications, Windows, Android and iOS. Most of the application on Xomorod are open source, free to download, and easy to use..
+        /// </summary>
+        public static string WebsiteMoreInfo {
+            get {
+                return ResourceManager.GetString("WebsiteMoreInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} Ranking.
+        /// </summary>
+        public static string WebsiteRanking {
+            get {
+                return ResourceManager.GetString("WebsiteRanking", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our broad tool-set enables us to partner with you to create and integrate custom solutions..
+        /// </summary>
+        public static string WebsiteService {
+            get {
+                return ResourceManager.GetString("WebsiteService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Khallagh Academy.
+        /// </summary>
+        public static string WebsiteSiteName {
+            get {
+                return ResourceManager.GetString("WebsiteSiteName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live More Intelligent.
+        /// </summary>
+        public static string WebsiteSlogan {
+            get {
+                return ResourceManager.GetString("WebsiteSlogan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tech News, Software Development, Mobile Agent Applications.
+        /// </summary>
+        public static string WebsiteSubject {
+            get {
+                return ResourceManager.GetString("WebsiteSubject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Khallagh Academy &amp; Online Learning.
+        /// </summary>
+        public static string WebsiteTitle {
+            get {
+                return ResourceManager.GetString("WebsiteTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.khallagh.org.
+        /// </summary>
+        public static string WebsiteUrl {
+            get {
+                return ResourceManager.GetString("WebsiteUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to WHAT&apos;S COMING NEXT?.
         /// </summary>
         public static string WhatsComingNext {
@@ -2227,101 +2128,11 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All software of Xomorod are supported for windows desktop and web platforms.
+        ///   Looks up a localized string similar to All software of {0} are supported for windows desktop and web platforms.
         /// </summary>
         public static string WindowsService {
             get {
                 return ResourceManager.GetString("WindowsService", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod.
-        /// </summary>
-        public static string Xomorod {
-            get {
-                return ResourceManager.GetString("Xomorod", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod Co. multinational technology company specializing in Internet-related services, Include learning, cloud books, tech news and software developing.
-        /// </summary>
-        public static string XomorodDescription {
-            get {
-                return ResourceManager.GetString("XomorodDescription", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod Corporation has small software company to provide what you need in the field of web applications, Windows, Android and iOS. Most of the application on Xomorod are open source, free to download, and easy to use..
-        /// </summary>
-        public static string XomorodMoreInfo {
-            get {
-                return ResourceManager.GetString("XomorodMoreInfo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod Ranking.
-        /// </summary>
-        public static string XomorodRanking {
-            get {
-                return ResourceManager.GetString("XomorodRanking", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Our broad tool-set enables us to partner with you to create and integrate custom solutions..
-        /// </summary>
-        public static string XomorodService {
-            get {
-                return ResourceManager.GetString("XomorodService", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod.
-        /// </summary>
-        public static string XomorodSiteName {
-            get {
-                return ResourceManager.GetString("XomorodSiteName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Live More Intelligent.
-        /// </summary>
-        public static string XomorodSlogan {
-            get {
-                return ResourceManager.GetString("XomorodSlogan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tech News, Software Development, Mobile Agent Applications.
-        /// </summary>
-        public static string XomorodSubject {
-            get {
-                return ResourceManager.GetString("XomorodSubject", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Xomorod Corporation Free Applications &amp; News.
-        /// </summary>
-        public static string XomorodTitle {
-            get {
-                return ResourceManager.GetString("XomorodTitle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to http://www.xomorod.com.
-        /// </summary>
-        public static string XomorodUrl {
-            get {
-                return ResourceManager.GetString("XomorodUrl", resourceCulture);
             }
         }
         

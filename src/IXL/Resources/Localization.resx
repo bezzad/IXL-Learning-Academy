@@ -120,27 +120,6 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
-  <data name="AboutUsDescriptionP1" xml:space="preserve">
-    <value>At Xomorod, it's about using the right tool for the job. If it's not a nail, we won't use a hammer. Different teams have different needs, and we let them dictate how they solve their problems, and what technologies they use.</value>
-  </data>
-  <data name="AboutUsDescriptionP2" xml:space="preserve">
-    <value>Come join a fun team at a fast growing start-up and be part of the mobile revolution. You will work with some of the best leaders and technical minds in the mobile space.</value>
-  </data>
-  <data name="AboutUsDescriptionP3" xml:space="preserve">
-    <value>We provide a highly competitive package with excellent compensation, bonuses, employee benefits, stock options and a friendly, supportive culture.</value>
-  </data>
-  <data name="AboutUsSkill1" xml:space="preserve">
-    <value>Use High Technology</value>
-  </data>
-  <data name="AboutUsSkill2" xml:space="preserve">
-    <value>Create Windows Applications</value>
-  </data>
-  <data name="AboutUsSkill3" xml:space="preserve">
-    <value>Developing Web Projects</value>
-  </data>
-  <data name="AboutUsSkill4" xml:space="preserve">
-    <value>Deploying learning and mobile applications</value>
-  </data>
   <data name="Add_phone_number" xml:space="preserve">
     <value>Add a phone number</value>
   </data>
@@ -159,9 +138,6 @@
   <data name="Android" xml:space="preserve">
     <value>Android</value>
   </data>
-  <data name="AndroidService" xml:space="preserve">
-    <value>Realize your ideas in the form of Android apps at the least possible time</value>
-  </data>
   <data name="An_error_has_occurred" xml:space="preserve">
     <value>An error has occurred.</value>
   </data>
@@ -170,9 +146,6 @@
   </data>
   <data name="Apple" xml:space="preserve">
     <value>Apple</value>
-  </data>
-  <data name="AppleService" xml:space="preserve">
-    <value>Build multi-platform applications with Xamarin technology for iOS and other platforms</value>
   </data>
   <data name="AssociateYourAccount" xml:space="preserve">
     <value>Associate your {0} account</value>
@@ -195,14 +168,8 @@
   <data name="CafeBazar" xml:space="preserve">
     <value>CafeBazar</value>
   </data>
-  <data name="CafebazarLogoUrl" xml:space="preserve">
-    <value>~/Content/images/cafebazar.png</value>
-  </data>
   <data name="CafebazarTitle" xml:space="preserve">
     <value>Cafebazar android market for us products</value>
-  </data>
-  <data name="CafebazarXomorodLink" xml:space="preserve">
-    <value>https://cafebazaar.ir/search/?q=xomorod&amp;l=en</value>
   </data>
   <data name="CaptchaHasNotValid" xml:space="preserve">
     <value>Captcha has not valid!</value>
@@ -226,13 +193,13 @@
     <value>Code</value>
   </data>
   <data name="CompanyAddress" xml:space="preserve">
-    <value>Tavanir Blvd, Tabriz, Iran</value>
+    <value>Kalantar No 2 Alley , Kalantar Street, Abresan, Tabriz, Iran</value>
   </data>
   <data name="CompanyLocation" xml:space="preserve">
     <value>Company Geo Location</value>
   </data>
-  <data name="CompanyName1" xml:space="preserve">
-    <value>Xomorod Corporation</value>
+  <data name="CompanyName" xml:space="preserve">
+    <value>Khallagh Academy</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
@@ -248,15 +215,6 @@
   </data>
   <data name="ContactUs" xml:space="preserve">
     <value>Contact Us</value>
-  </data>
-  <data name="ContactUsSubTitle1" xml:space="preserve">
-    <value>Ready to start your next project with us? That's great!</value>
-  </data>
-  <data name="ContactUsSubTitle2" xml:space="preserve">
-    <value>Give us a call or send us an email and we will get back to you as soon as possible!</value>
-  </data>
-  <data name="ContactUsSubTitle3" xml:space="preserve">
-    <value>To contact the team members can follow them on social networks or via email if you communicate with them.</value>
   </data>
   <data name="Copyright" xml:space="preserve">
     <value>Copyright</value>
@@ -423,14 +381,8 @@
   <data name="MoreDownloadNow" xml:space="preserve">
     <value>More Download Now !</value>
   </data>
-  <data name="MyKetLogoUrl" xml:space="preserve">
-    <value>~/Content/images/myket.png</value>
-  </data>
   <data name="MyKetTitle" xml:space="preserve">
     <value>Myket android market for us products</value>
-  </data>
-  <data name="MyKetXomorodLink" xml:space="preserve">
-    <value>https://myket.ir/search/xomorod?lang=en</value>
   </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
@@ -445,7 +397,7 @@
     <value>Newsletter</value>
   </data>
   <data name="NewsUrl" xml:space="preserve">
-    <value>http://news.xomorod.com</value>
+    <value>http://news.khallagh.com</value>
   </data>
   <data name="No" xml:space="preserve">
     <value>No</value>
@@ -486,9 +438,6 @@
   </data>
   <data name="Portfolio" xml:space="preserve">
     <value>Portfolio</value>
-  </data>
-  <data name="PortfolioMoreInfo" xml:space="preserve">
-    <value>Many of our projects are open source and free. You can download from GitHub.</value>
   </data>
   <data name="PortfolioSubTitle" xml:space="preserve">
     <value>The best of our products.</value>
@@ -705,25 +654,13 @@ We will use your personal characteristics, just to respond to you and to prepare
     <value>Send verification code</value>
   </data>
   <data name="SeoKeywords" xml:space="preserve">
-    <value>xomorod, corporation, software, iOs, windows, tech, news, zomorod, free, .Net, libraries, mobile, applications, android, fast book, website, web, world technology, f56ce249532f51527774</value>
-  </data>
-  <data name="ServiceSubTitle" xml:space="preserve">
-    <value>We've got what you need!</value>
+    <value>khallagh, khalag, khallag, khalagh, school, academy, ixl, online school, amoozesh, koodak, tarbiyat, madreseh, preschool, girl, boy, baby academy, tabriz, amoozeshgah, tizhooshan, inteligence school</value>
   </data>
   <data name="SetPassword" xml:space="preserve">
     <value>Set Password</value>
   </data>
   <data name="Setting" xml:space="preserve">
     <value>Setting</value>
-  </data>
-  <data name="ShonizLogoUrl" xml:space="preserve">
-    <value>~/Content/images/bwShonizEn.png</value>
-  </data>
-  <data name="ShonizTitle" xml:space="preserve">
-    <value>Shoniz web site</value>
-  </data>
-  <data name="ShonizUrl" xml:space="preserve">
-    <value>http://www.shoniz.com/</value>
   </data>
   <data name="ShowcaseClients" xml:space="preserve">
     <value>Our Business Showcase</value>
@@ -732,10 +669,10 @@ We will use your personal characteristics, just to respond to you and to prepare
     <value>Sitemap</value>
   </data>
   <data name="SitemapDescription" xml:space="preserve">
-    <value>Sitemap of Xomorod.co</value>
+    <value>Sitemap of {0}</value>
   </data>
   <data name="SiteNameSiteMap" xml:space="preserve">
-    <value>Xomorod Sitemap</value>
+    <value>{0} Sitemap</value>
   </data>
   <data name="SitesLinkingIn" xml:space="preserve">
     <value>Sites Linking In</value>
@@ -782,10 +719,10 @@ We will use your personal characteristics, just to respond to you and to prepare
     <value>Twitter</value>
   </data>
   <data name="TwitterCreator" xml:space="preserve">
-    <value>@xomorod</value>
+    <value>@khallaghac</value>
   </data>
   <data name="TwitterSite" xml:space="preserve">
-    <value>@xomorod</value>
+    <value>@khallaghac</value>
   </data>
   <data name="TwoLetterISOLanguageName" xml:space="preserve">
     <value>en</value>
@@ -830,37 +767,37 @@ We will use your personal characteristics, just to respond to you and to prepare
     <value>Widows</value>
   </data>
   <data name="WindowsService" xml:space="preserve">
-    <value>All software of Xomorod are supported for windows desktop and web platforms</value>
+    <value>All software of {0} are supported for windows desktop and web platforms</value>
   </data>
-  <data name="Xomorod" xml:space="preserve">
-    <value>Xomorod</value>
+  <data name="Website" xml:space="preserve">
+    <value>Khalagh Academy</value>
   </data>
-  <data name="XomorodDescription" xml:space="preserve">
-    <value>Xomorod Co. multinational technology company specializing in Internet-related services, Include learning, cloud books, tech news and software developing</value>
+  <data name="WebsiteDescription" xml:space="preserve">
+    <value>{0}. multinational technology company specializing in Internet-related services, Include learning, cloud books, tech news and software developing</value>
   </data>
-  <data name="XomorodMoreInfo" xml:space="preserve">
-    <value>Xomorod Corporation has small software company to provide what you need in the field of web applications, Windows, Android and iOS. Most of the application on Xomorod are open source, free to download, and easy to use.</value>
+  <data name="WebsiteMoreInfo" xml:space="preserve">
+    <value>{0} has small software company to provide what you need in the field of web applications, Windows, Android and iOS. Most of the application on Xomorod are open source, free to download, and easy to use.</value>
   </data>
-  <data name="XomorodRanking" xml:space="preserve">
-    <value>Xomorod Ranking</value>
+  <data name="WebsiteRanking" xml:space="preserve">
+    <value>{0} Ranking</value>
   </data>
-  <data name="XomorodService" xml:space="preserve">
+  <data name="WebsiteService" xml:space="preserve">
     <value>Our broad tool-set enables us to partner with you to create and integrate custom solutions.</value>
   </data>
-  <data name="XomorodSiteName" xml:space="preserve">
-    <value>Xomorod</value>
+  <data name="WebsiteSiteName" xml:space="preserve">
+    <value>Khallagh Academy</value>
   </data>
-  <data name="XomorodSlogan" xml:space="preserve">
+  <data name="WebsiteSlogan" xml:space="preserve">
     <value>Live More Intelligent</value>
   </data>
-  <data name="XomorodSubject" xml:space="preserve">
+  <data name="WebsiteSubject" xml:space="preserve">
     <value>Tech News, Software Development, Mobile Agent Applications</value>
   </data>
-  <data name="XomorodTitle" xml:space="preserve">
-    <value>Xomorod Corporation Free Applications &amp; News</value>
+  <data name="WebsiteTitle" xml:space="preserve">
+    <value>Khallagh Academy &amp; Online Learning</value>
   </data>
-  <data name="XomorodUrl" xml:space="preserve">
-    <value>http://www.xomorod.com</value>
+  <data name="WebsiteUrl" xml:space="preserve">
+    <value>http://www.khallagh.org</value>
   </data>
   <data name="Yahoo" xml:space="preserve">
     <value>Yahoo</value>
