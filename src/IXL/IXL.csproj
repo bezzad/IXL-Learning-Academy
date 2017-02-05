@@ -359,6 +359,8 @@
     <Content Include="Views\Manage\SetPassword.cshtml" />
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Sitemaps\Index.cshtml" />
+    <Content Include="Views\Shared\LayoutPartials\_Footer.cshtml" />
+    <Content Include="Views\Shared\LayoutPartials\_Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Localization.fa.resx">
