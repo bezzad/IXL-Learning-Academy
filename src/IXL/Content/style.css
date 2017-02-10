@@ -534,19 +534,22 @@ header #menu-container ul.dt-sc-social-icons{float:right; height:60px;}
 
 /**fullwidth-background**/
 
-.fullwidth-background{float:left; clear:both; width:100%; margin:0px; padding:78px 0px; background-image:url(http://placehold.it/1920x436); background-position:center center; background-repeat:repeat; background-attachment:fixed;}
+.fullwidth-background{float:left; clear:both; width:100%; margin:0px; padding:78px 0px; background-image:url(images/cloud-bg.png); background-position:center center; background-repeat:repeat; background-attachment:fixed;}
 
 .fullwidth-background.turquoise-bg h2{color:#FFFFFF; text-transform:capitalize;}
 
 .fullwidth-background.turquoise-bg{background-color:#008c99;}
 
-.fullwidth-background.orange-bg{background-color:#cf571b;}
+.fullwidth-background.orange-bg {
+    background: url(images/fullwidth-blog-bg.png); background-color: rgba(0, 0, 0, 0.901961); 
+    background-repeat: no-repeat; padding-top: 78px; padding-bottom: 78px; background-attachment: fixed; background-position: 50% 13px;
+}
 
 .fullwidth-background.mustard-bg{background:#df9b00; width:100%; padding:78px 0px; float:left; clear:both;}
 
 .fullwidth-background.turquoise-plain-bg{width:100%; padding:78px 0px; float:left; clear:both;}
 
-.fullwidth-background.product_bg{background:url(http://placehold.it/1920x717) center center repeat #d2d2d2;}
+.fullwidth-background.product_bg{background:url(images/product_bg.png) center center repeat #d2d2d2;}
 
 /*--------------------------------------------------------------
 4.2 - Add Slider Styles
@@ -1318,4 +1321,6 @@ footer .footer-links p{float:left; background:url(images/footer_arrow.png) right
 
 .back-to-top{position:fixed; bottom:8px; right:8px; width:42px; height:43px; line-height:43px; background:url(images/go_to_top.png) no-repeat; font-size:10px; text-indent:-9999px; text-align:center; display:none; z-index:9999;}
 
-/*.back-to-top:hover{opacity:0.8;}*/
+.back-to-top:hover{opacity:0.8;}
+
+li.dt-sc-one-fourth {box-shadow: -1px 0px 20px 0px #555555;}

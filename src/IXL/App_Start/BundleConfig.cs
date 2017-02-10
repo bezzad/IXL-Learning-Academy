@@ -32,10 +32,9 @@ namespace IXL
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/layout").Include(
-                "~/Scripts/jquery-{version}.js",
-                //"~/Scripts/jquery.js",
+                "~/Scripts/jquery-2.2.4.js",
                 "~/Scripts/jquery-migrate.min.js",
-                "~/Scripts/jquery.tabs.min.js",
+                //"~/Scripts/jquery.tabs.min.js",
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/jquery-easing-{version}.js",
                 "~/Scripts/jquery.sticky.js",
@@ -46,7 +45,8 @@ namespace IXL
                 "~/Scripts/jquery.prettyPhoto.js",
                 "~/Scripts/twitter/jquery.tweet.min.js",
                 "~/Scripts/shortcodes.js",
-                "~/Scripts/custom.js"));
+                "~/Scripts/custom.js"
+                ));
 
 
 

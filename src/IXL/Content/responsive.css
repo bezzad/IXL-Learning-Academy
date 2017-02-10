@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 /*----*****---- << Desktop >> ----*****----*/	
 /* Note: Design for a width of 768px, Gutter: 30px, Unit: 32px */
@@ -610,9 +610,9 @@ footer .copyright .footer-links{float:none; display:inline-block;}
 
 .entry-meta	.entry_format{width:35%;}
 
-.entry-meta .date:after, .entry-meta .comments:after, .entry-meta .entry_format:after{content:""; background:url(../images/green-meta-arrow.png) right center no-repeat; float:left; width:15px; height:39px; margin:0px 0px 0px 0px; position:absolute; top:0px; right:-15px; border:0px; -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+.entry-meta .date:after, .entry-meta .comments:after, .entry-meta .entry_format:after{content:""; background:url(images/green-meta-arrow.png) right center no-repeat; float:left; width:15px; height:39px; margin:0px 0px 0px 0px; position:absolute; top:0px; right:-15px; border:0px; -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
 
-.fullwidth-background.orange-bg .entry-meta .date:after, .fullwidth-background.orange-bg .entry-meta .comments:after, .fullwidth-background.orange-bg .entry-meta .entry_format:after{background:url(../images/meta_arrow.png) right center no-repeat;}
+.fullwidth-background.orange-bg .entry-meta .date:after, .fullwidth-background.orange-bg .entry-meta .comments:after, .fullwidth-background.orange-bg .entry-meta .entry_format:after{background:url(images/meta_arrow.png) right center no-repeat;}
 
 #primary.with-sidebar .dt-sc-one-half .entry-meta .date, #primary.with-sidebar .dt-sc-one-half .entry-meta .comments, #primary.with-sidebar .dt-sc-one-half .entry-meta .entry_format{padding:0px 0px; float:none; margin:0px auto 20px; display:block;}
 
@@ -817,9 +817,9 @@ ul.commentlist li{padding:100px 0px 0px;}
 
 .entry-meta	.entry_format{width:35%;}
 
-.entry-meta .date:after, .entry-meta .comments:after, .entry-meta .entry_format:after{content:""; background:url(../images/green-meta-arrow.png) right center no-repeat; float:left; width:15px; height:39px; margin:0px 0px 0px 0px; position:absolute; top:0px; right:-15px; border:0px; -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
+.entry-meta .date:after, .entry-meta .comments:after, .entry-meta .entry_format:after{content:""; background:url(images/green-meta-arrow.png) right center no-repeat; float:left; width:15px; height:39px; margin:0px 0px 0px 0px; position:absolute; top:0px; right:-15px; border:0px; -webkit-transform:rotate(180deg); -moz-transform:rotate(180deg); transform:rotate(180deg);}
 
-.fullwidth-background.orange-bg .entry-meta .date:after, .fullwidth-background.orange-bg .entry-meta .comments:after, .fullwidth-background.orange-bg .entry-meta .entry_format:after{background:url(../images/meta_arrow.png) right center no-repeat;}
+.fullwidth-background.orange-bg .entry-meta .date:after, .fullwidth-background.orange-bg .entry-meta .comments:after, .fullwidth-background.orange-bg .entry-meta .entry_format:after{background:url(images/meta_arrow.png) right center no-repeat;}
 
 #primary.with-sidebar .dt-sc-one-half .entry-meta .date, #primary.with-sidebar .dt-sc-one-half .entry-meta .comments, #primary.with-sidebar .dt-sc-one-half .entry-meta .entry_format{padding:0px 0px; float:none; margin:0px auto 20px; display:block;}
 

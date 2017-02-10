@@ -130,7 +130,7 @@
     <value>All</value>
   </data>
   <data name="AllRightsReserved" xml:space="preserve">
-    <value>All rights reserved.</value>
+    <value>All rights reserved</value>
   </data>
   <data name="ANALYZE" xml:space="preserve">
     <value>ANALYZE</value>
@@ -856,5 +856,11 @@ We will use your personal characteristics, just to respond to you and to prepare
   </data>
   <data name="PhoneNo" xml:space="preserve">
     <value>+98 413 3250 009</value>
+  </data>
+  <data name="CompanyEmail" xml:space="preserve">
+    <value>contact@khallagh.org</value>
+  </data>
+  <data name="CompanyDomain" xml:space="preserve">
+    <value>khallagh.org</value>
   </data>
 </root>

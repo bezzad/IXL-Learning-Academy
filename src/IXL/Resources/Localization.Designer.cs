@@ -142,7 +142,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to All rights reserved..
+        ///   Looks up a localized string similar to All rights reserved.
         /// </summary>
         public static string AllRightsReserved {
             get {
@@ -336,6 +336,24 @@ namespace IXL.Resources {
         public static string CompanyAddress {
             get {
                 return ResourceManager.GetString("CompanyAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to khallagh.org.
+        /// </summary>
+        public static string CompanyDomain {
+            get {
+                return ResourceManager.GetString("CompanyDomain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to contact@khallagh.org.
+        /// </summary>
+        public static string CompanyEmail {
+            get {
+                return ResourceManager.GetString("CompanyEmail", resourceCulture);
             }
         }
         
