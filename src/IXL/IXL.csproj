@@ -260,6 +260,7 @@
     <Content Include="Content\images\arrow.png" />
     <Content Include="Content\images\audio-bg.png" />
     <Content Include="Content\images\author-hexa-bg.png" />
+    <Content Include="Content\images\blank.gif" />
     <Content Include="Content\images\cloud-bg.png" />
     <Content Include="Content\images\contact_form_bg.png" />
     <Content Include="Content\images\copyright_top_bg.jpg" />
@@ -284,6 +285,7 @@
     <Content Include="Content\images\footer_title_bg.png" />
     <Content Include="Content\images\footer_top_bg.png" />
     <Content Include="Content\images\global.png" />
+    <Content Include="Content\images\go_to_top.png" />
     <Content Include="Content\images\gplus.png" />
     <Content Include="Content\images\green-meta-arrow.png" />
     <Content Include="Content\images\green-meta-res-arrow.png" />
@@ -304,6 +306,7 @@
     <Content Include="Content\images\layerslider-gallery\b-glass.png" />
     <Content Include="Content\images\layerslider-gallery\b-swirl.png" />
     <Content Include="Content\images\layerslider-gallery\b-tick.png" />
+    <Content Include="Content\images\layerslider-gallery\blank.gif" />
     <Content Include="Content\images\layerslider-gallery\boom.png" />
     <Content Include="Content\images\layerslider-gallery\bring.png" />
     <Content Include="Content\images\layerslider-gallery\cap.png" />
@@ -595,6 +598,7 @@
     <EmbeddedResource Include="Resources\Localization.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

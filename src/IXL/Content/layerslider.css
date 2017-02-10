@@ -266,11 +266,11 @@
 	height: 100% !important;
 	left: 0 !important;
 	top: 0 !important;
-	background-image: url(blank.gif);
+	background-image: url(images/blank.gif);
 }
 
 .ls-slide > a > * {
-	background-image: url(blank.gif);
+	background-image: url(images/blank.gif);
 }
 
 

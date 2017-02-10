@@ -12,7 +12,19 @@
     <title>@Localization.WebsiteSiteName - @ViewBag.Title</title>
     <meta name="description" content="@Localization.WebsiteDescription">
     <meta name="author" content="@Localization.Author">
-    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon" />
+    <link rel="shortcut icon" href="@Url.Content("~/favicon.ico")" type="image/x-icon"/>
+    <link href='@Url.Content("~/favicon.ico")' rel='apple-touch-icon-precomposed' />
+    <link href='@Url.Content("~/favicon.ico")' sizes='114x114' rel='apple-touch-icon-precomposed' />
+    <link href='@Url.Content("~/favicon.ico")' sizes='72x72' rel='apple-touch-icon-precomposed' />
+    <link href='@Url.Content("~/favicon.ico")' sizes='144x144' rel='apple-touch-icon-precomposed' />
+    <!-- /all in one seo pack -->
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel="alternate" type="application/rss+xml" title="Kids Life &raquo; Feed" href="http://wedesignthemes.com/themes/dt-kidslife/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Kids Life &raquo; Comments Feed" href="http://wedesignthemes.com/themes/dt-kidslife/comments/feed/" />
+    <link rel="alternate" type="text/calendar" title="Kids Life &raquo; iCal Feed" href="http://wedesignthemes.com/themes/dt-kidslife/events/?ical=1" />
+    <link rel="alternate" type="application/rss+xml" title="Kids Life &raquo; Home Comments Feed" href="http://wedesignthemes.com/themes/dt-kidslife/home/feed/"/>
+
     @Styles.Render("~/Content/layout")
     @RenderSection("styles", required: false)
     <!--[if lt IE 9]>

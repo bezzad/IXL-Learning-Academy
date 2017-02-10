@@ -1316,11 +1316,6 @@ footer .footer-links p{float:left; background:url(images/footer_arrow.png) right
 
 .copyright .copyright-info{margin:0px; line-height:35px;}
 
-.back-to-top{position:fixed; bottom:8px; right:8px; width:42px; height:43px; line-height:43px; background:url(http://placehold.it/42x43) no-repeat; font-size:10px; text-indent:-9999px; text-align:center; display:none; z-index:9999;}
+.back-to-top{position:fixed; bottom:8px; right:8px; width:42px; height:43px; line-height:43px; background:url(images/go_to_top.png) no-repeat; font-size:10px; text-indent:-9999px; text-align:center; display:none; z-index:9999;}
 
 /*.back-to-top:hover{opacity:0.8;}*/
-
-
-
-
-	

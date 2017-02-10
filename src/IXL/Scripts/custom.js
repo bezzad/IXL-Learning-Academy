@@ -234,7 +234,7 @@ jQuery(document).ready(function ($) {
 
 	//TWITTER TWEETS...
 	$("#tweets_container").tweet({
-		modpath: 'js/twitter/',
+		modpath: 'scripts/twitter/',
 		username: "envato",
 		count: 3,
 		loading_text: "loading tweets...",

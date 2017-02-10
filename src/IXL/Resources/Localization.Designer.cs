@@ -1042,6 +1042,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to +98 413 3250 009.
+        /// </summary>
+        public static string PhoneNo {
+            get {
+                return ResourceManager.GetString("PhoneNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone Number.
         /// </summary>
         public static string PhoneNumber {

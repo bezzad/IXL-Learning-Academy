@@ -3,7 +3,9 @@
 <header>
     <div class="container">
         <div class="logo">
-            <a href="@Url.Action("Index", "Home")" title="@Localization.WebsiteSiteName"><img src="@Url.Content("~/Content/images/logo.png")" alt="Kids Life" title="Kids Life"></a>
+            <a href="@Url.Action("Index", "Home")" title="@Localization.WebsiteSiteName">
+                <img src="@Url.Content("~/Content/images/logo.png")" alt="Kids Life" title="Kids Life">
+            </a>
         </div>
         <div class="contact-details">
             <p class="mail">
@@ -11,7 +13,7 @@
                 <span class="fa fa-envelope"></span>
             </p>
             <p class="phone-no">
-                <i>+1 959 552 5963</i>
+                <i>@Localization.PhoneNo</i>
                 <span class="fa fa-phone"></span>
             </p>
         </div>

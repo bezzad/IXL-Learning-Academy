@@ -18,6 +18,8 @@ namespace IXL
             routes.IgnoreRoute("robots.txt");
             routes.IgnoreRoute("scripts/{resource}.map/{*pathInfo}");
             routes.IgnoreRoute("content/{resource}.map/{*pathInfo}");
+            routes.IgnoreRoute("scripts/{*pathInfo}");
+            routes.IgnoreRoute("scripts/twitter/{*pathInfo}");
 
             //
             // First of all MapRoutes

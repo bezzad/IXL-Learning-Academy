@@ -846,4 +846,7 @@
   <data name="lang" xml:space="preserve">
     <value>fa-ir</value>
   </data>
+  <data name="PhoneNo" xml:space="preserve">
+    <value>+98 413 3250 009</value>
+  </data>
 </root>
