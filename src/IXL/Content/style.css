@@ -1323,4 +1323,15 @@ footer .footer-links p{float:left; background:url(images/footer_arrow.png) right
 
 .back-to-top:hover{opacity:0.8;}
 
-li.dt-sc-one-fourth {box-shadow: -1px 0px 20px 0px #555555;}
+li.dt-sc-one-fourth, .product-thumb a img, .image-overlay {border-radius: 10px;}
+
+.shadow{
+    box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    -moz-transition: all .375s ease;
+    -o-transition: all .375s ease;
+    -webkit-transition: all .375s ease;
+    transition: all .375s ease;
+    text-decoration: none;
+}
+.shadow:hover{box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);}
+.shadow.nohover:hover{box-shadow:0 2px 5px 0 rgba(0, 0, 0, 0.26)}
