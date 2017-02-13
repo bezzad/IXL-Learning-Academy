@@ -863,4 +863,10 @@ We will use your personal characteristics, just to respond to you and to prepare
   <data name="CompanyDomain" xml:space="preserve">
     <value>khallagh.org</value>
   </data>
+  <data name="Dir" xml:space="preserve">
+    <value>ltr</value>
+  </data>
+  <data name="FooterAboutTitle" xml:space="preserve">
+    <value>About khallagh</value>
+  </data>
 </root>

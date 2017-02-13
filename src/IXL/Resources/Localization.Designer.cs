@@ -493,6 +493,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ltr.
+        /// </summary>
+        public static string Dir {
+            get {
+                return ResourceManager.GetString("Dir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The email address is duplicate!.
         /// </summary>
         public static string DuplicateEmailError {
@@ -624,6 +633,15 @@ namespace IXL.Resources {
         public static string Features {
             get {
                 return ResourceManager.GetString("Features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About khallagh.
+        /// </summary>
+        public static string FooterAboutTitle {
+            get {
+                return ResourceManager.GetString("FooterAboutTitle", resourceCulture);
             }
         }
         

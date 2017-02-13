@@ -855,4 +855,10 @@
   <data name="CompanyDomain" xml:space="preserve">
     <value>khallagh.org</value>
   </data>
+  <data name="Dir" xml:space="preserve">
+    <value>rtl</value>
+  </data>
+  <data name="FooterAboutTitle" xml:space="preserve">
+    <value>درباره خلاق</value>
+  </data>
 </root>
