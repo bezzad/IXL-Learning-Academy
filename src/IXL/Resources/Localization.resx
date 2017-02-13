@@ -863,4 +863,7 @@ We will use your personal characteristics, just to respond to you and to prepare
   <data name="CompanyDomain" xml:space="preserve">
     <value>khallagh.org</value>
   </data>
+  <data name="GalleryTitle" xml:space="preserve">
+    <value>The Best Moments of Khallagh Childs!</value>
+  </data>
 </root>

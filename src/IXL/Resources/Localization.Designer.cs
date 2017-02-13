@@ -646,6 +646,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Best Moments of Khallagh Childs!.
+        /// </summary>
+        public static string GalleryTitle {
+            get {
+                return ResourceManager.GetString("GalleryTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Get in touch.
         /// </summary>
         public static string GetInTouch {
