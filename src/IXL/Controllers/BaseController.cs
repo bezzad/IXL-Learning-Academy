@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -36,11 +37,12 @@ namespace IXL.Controllers
             // Validate culture name
             cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe
 
-
-            // Modify current thread's cultures            
-            Thread.CurrentThread.CurrentCulture =
+            // Modify current thread's cultures  
+            CultureInfo.DefaultThreadCurrentCulture =
+                CultureInfo.DefaultThreadCurrentUICulture =
+                Thread.CurrentThread.CurrentCulture =
                 Thread.CurrentThread.CurrentUICulture =
-                    new System.Globalization.CultureInfo(cultureName);
+                    new CultureInfo(cultureName);
 
             RouteData.Values["culture"] = cultureName;  // set culture
 
