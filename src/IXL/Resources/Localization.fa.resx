@@ -861,4 +861,7 @@
   <data name="FooterAboutTitle" xml:space="preserve">
     <value>درباره خلاق</value>
   </data>
+  <data name="GalleryTitle" xml:space="preserve">
+    <value>بهترین لحظات کودکانه خلاق!</value>
+  </data>
 </root>
