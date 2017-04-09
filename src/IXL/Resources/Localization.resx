@@ -872,4 +872,52 @@ We will use your personal characteristics, just to respond to you and to prepare
   <data name="FooterAboutTitle" xml:space="preserve">
     <value>About khallagh</value>
   </data>
+  <data name="HushKhallaghiyatDidari" xml:space="preserve">
+    <value>HushKhallaghiyatDidari</value>
+  </data>
+  <data name="HushKhallaghiyatDidari1" xml:space="preserve">
+    <value>HushKhallaghiyatDidari1</value>
+  </data>
+  <data name="HushKhallaghiyatEjtemaei" xml:space="preserve">
+    <value>HushKhallaghiyatEjtemaei</value>
+  </data>
+  <data name="HushKhallaghiyatEjtemaei1" xml:space="preserve">
+    <value>HushKhallaghiyatEjtemaei1</value>
+  </data>
+  <data name="HushKhallaghiyatFardi" xml:space="preserve">
+    <value>HushKhallaghiyatFardi</value>
+  </data>
+  <data name="HushKhallaghiyatFardi1" xml:space="preserve">
+    <value>HushKhallaghiyatFardi1</value>
+  </data>
+  <data name="HushKhallaghiyatHarekati" xml:space="preserve">
+    <value>HushKhallaghiyatHarekati</value>
+  </data>
+  <data name="HushKhallaghiyatHarekati1" xml:space="preserve">
+    <value>HushKhallaghiyatHarekati1</value>
+  </data>
+  <data name="HushKhallaghiyatOlum" xml:space="preserve">
+    <value>HushKhallaghiyatOlum</value>
+  </data>
+  <data name="HushKhallaghiyatOlum1" xml:space="preserve">
+    <value>HushKhallaghiyatOlum1</value>
+  </data>
+  <data name="HushKhallaghiyatRiyazi" xml:space="preserve">
+    <value>HushKhallaghiyatRiyazi</value>
+  </data>
+  <data name="HushKhallaghiyatRiyazi1" xml:space="preserve">
+    <value>HushKhallaghiyatRiyazi1</value>
+  </data>
+  <data name="HushKhallaghiyatShenidari" xml:space="preserve">
+    <value>HushKhallaghiyatShenidari</value>
+  </data>
+  <data name="HushKhallaghiyatShenidari1" xml:space="preserve">
+    <value>HushKhallaghiyatShenidari1</value>
+  </data>
+  <data name="HushKhallaghiyatZabanamuzi" xml:space="preserve">
+    <value>HushKhallaghiyatZabanamuzi</value>
+  </data>
+  <data name="HushKhallaghiyatZabanamuzi1" xml:space="preserve">
+    <value>HushKhallaghiyatZabanamuzi1</value>
+  </data>
 </root>
