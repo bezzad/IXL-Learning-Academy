@@ -727,6 +727,150 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatDidari.
+        /// </summary>
+        public static string HushKhallaghiyatDidari {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatDidari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatDidari1.
+        /// </summary>
+        public static string HushKhallaghiyatDidari1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatDidari1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatEjtemaei.
+        /// </summary>
+        public static string HushKhallaghiyatEjtemaei {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatEjtemaei", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatEjtemaei1.
+        /// </summary>
+        public static string HushKhallaghiyatEjtemaei1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatEjtemaei1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatFardi.
+        /// </summary>
+        public static string HushKhallaghiyatFardi {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatFardi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatFardi1.
+        /// </summary>
+        public static string HushKhallaghiyatFardi1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatFardi1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatHarekati.
+        /// </summary>
+        public static string HushKhallaghiyatHarekati {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatHarekati", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatHarekati1.
+        /// </summary>
+        public static string HushKhallaghiyatHarekati1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatHarekati1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatOlum.
+        /// </summary>
+        public static string HushKhallaghiyatOlum {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatOlum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatOlum1.
+        /// </summary>
+        public static string HushKhallaghiyatOlum1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatOlum1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatRiyazi.
+        /// </summary>
+        public static string HushKhallaghiyatRiyazi {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatRiyazi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatRiyazi1.
+        /// </summary>
+        public static string HushKhallaghiyatRiyazi1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatRiyazi1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatShenidari.
+        /// </summary>
+        public static string HushKhallaghiyatShenidari {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatShenidari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatShenidari1.
+        /// </summary>
+        public static string HushKhallaghiyatShenidari1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatShenidari1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatZabanamuzi.
+        /// </summary>
+        public static string HushKhallaghiyatZabanamuzi {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatZabanamuzi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HushKhallaghiyatZabanamuzi1.
+        /// </summary>
+        public static string HushKhallaghiyatZabanamuzi1 {
+            get {
+                return ResourceManager.GetString("HushKhallaghiyatZabanamuzi1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID.
         /// </summary>
         public static string ID {
