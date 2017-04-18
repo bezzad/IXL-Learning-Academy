@@ -410,7 +410,7 @@ namespace IXL.Core
         /// <returns></returns>
         public static string GetDefaultCulture()
         {
-            return "en"; // return Default culture
+            return "fa"; // return Default culture
         }
 
         public static string GetCurrentCulture()
