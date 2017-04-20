@@ -26,11 +26,16 @@
 1.0 - General Styles
 --------------------------------------------------------------*/
 
+@font-face {
+    font-family: "iransans";
+    src: url(../fonts/iransans.ttf) format("truetype");
+}
+
 *{-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
 
 ::selection{background-color:#008c99; color:#FFFFFF;}
 
-body{background:#f0f3f3; color:#5c5c5c; margin:0px; padding:0px; font-family:'Lato', sans-serif; font-size:14px; line-height:22px;}
+body{background:#f0f3f3; color:#5c5c5c; margin:0px; padding:0px; font-family:'iransans', 'Lato', sans-serif; font-size:14px; line-height:22px;}
 
 .container{width:1170px; margin:0 auto;}
 
@@ -130,11 +135,11 @@ input.error, textarea.error{padding:15px 18px; border:1px solid #FF0000;}
 2.0 - Font Family
 --------------------------------------------------------------*/
 
-.dt-sc-toggle-frame h5 a, .course h5.dt-sc-toggle-accordion:before, .course h5.dt-sc-toggle-accordion.active:before, h5.dt-sc-toggle a, h5.dt-sc-toggle-accordion a, .product-details h5 a, .front-portfolio .image-overlay h5 a{font-family:'Lato', sans-serif;}
+.dt-sc-toggle-frame h5 a, .course h5.dt-sc-toggle-accordion:before, .course h5.dt-sc-toggle-accordion.active:before, h5.dt-sc-toggle a, h5.dt-sc-toggle-accordion a, .product-details h5 a, .front-portfolio .image-overlay h5 a{font-family:'iransans', 'Lato', sans-serif;}
 
-#main-menu .megamenu-child-container .widget ul.product_list_widget li a, #main-menu .megamenu-child-container .widget ul.product_list_widget li span.amount{font-family:'Open Sans', sans-serif;}
+#main-menu .megamenu-child-container .widget ul.product_list_widget li a, #main-menu .megamenu-child-container .widget ul.product_list_widget li span.amount{font-family:'iransans', 'Open Sans', sans-serif;}
 
-h1, h2, h3, h4, h5, h6, .dt-sc-ico-content h4 a, .dt-sc-ico-content.type2 h4 a, .entry-title h3, .dt-sc-team h4, h3.widgettitle, .dt-sc-music-audio h5 a, input[type=text], input[type=email], textarea, .breadcrumb-section h1, .activity h4, .megamenu-child-container > ul.sub-menu > li > a{font-family:'Bubblegum Sans', cursive; font-weight:normal;}
+h1, h2, h3, h4, h5, h6, .dt-sc-ico-content h4 a, .dt-sc-ico-content.type2 h4 a, .entry-title h3, .dt-sc-team h4, h3.widgettitle, .dt-sc-music-audio h5 a, input[type=text], input[type=email], textarea, .breadcrumb-section h1, .activity h4, .megamenu-child-container > ul.sub-menu > li > a{font-family: 'iransans', 'Bubblegum Sans', cursive; font-weight:normal;}
 
 footer .widget.widget_text ul li:before, .portfolio-detail p:before, h5.dt-sc-toggle-accordion:before, h5.dt-sc-toggle:before, .entry-meta .entry_format, .dt-sc-error-box:before, .dt-sc-warning-box:before, .dt-sc-success-box:before, .dt-sc-info-box:before, .dt-sc-toggle-frame h5 a:before, .dt-sc-toggle-frame h5 a:after, .dt-sc-toggle-frame-set .dt-sc-toggle-frame h5.dt-sc-toggle-accordion:after, .dt-sc-toggle-frame-set .dt-sc-toggle-frame h5.dt-sc-toggle:after, ul.dt-sc-fancy-list li:before, header ul.dt-sc-social-icons li a:before{font-family:FontAwesome; font-style:normal; font-weight:normal;}
 
@@ -575,7 +580,7 @@ header #menu-container ul.dt-sc-social-icons{float:right; height:60px;}
 
 .fullwidth_banner{background:url(http://placehold.it/1920x253) center center no-repeat; text-align:center; width:100%; background-size:cover; padding:87px 0px;}
 
-.fullwidth_banner h1{font-family:'Berkshire Swash', cursive; font-size:36px;}
+.fullwidth_banner h1{font-family:'iransans', 'Berkshire Swash', cursive; font-size:36px;}
 
 .add-slider-wrapper .bx-controls.bx-has-pager{margin:54px 0px 0px 0px;}
 
