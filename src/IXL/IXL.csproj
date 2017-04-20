@@ -690,7 +690,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>22208</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:22208/</IISUrl>
+          <IISUrl>https://localhost:44337/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

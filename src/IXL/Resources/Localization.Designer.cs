@@ -223,11 +223,20 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Behzad Khosravifar.
+        ///   Looks up a localized string similar to Xomorod.com.
         /// </summary>
         public static string Author {
             get {
                 return ResourceManager.GetString("Author", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://Xomorod.com.
+        /// </summary>
+        public static string AuthorUrl {
+            get {
+                return ResourceManager.GetString("AuthorUrl", resourceCulture);
             }
         }
         
@@ -471,6 +480,15 @@ namespace IXL.Resources {
         public static string debug {
             get {
                 return ResourceManager.GetString("debug", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Design by.
+        /// </summary>
+        public static string DesignBy {
+            get {
+                return ResourceManager.GetString("DesignBy", resourceCulture);
             }
         }
         

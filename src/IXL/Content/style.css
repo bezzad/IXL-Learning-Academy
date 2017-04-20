@@ -1188,9 +1188,9 @@ ol.commentlist .comment_container{float:left; margin-right:20px; max-width:60px;
 
 .dt-sc-contact-info{padding:0px 0px 12px; border-bottom:1px dotted #a2a2a2; width:100%; display:block; clear:both; float:left; margin:0px 0px 25px;}
 
-.dt-sc-contact-info a{text-transform:lowercase;}
+.dt-sc-contact-info a{text-transform:lowercase; }
 
-.dt-sc-contact-info i{display:inline-block; font-size:20px; margin:2px 15px 10px 0px; float:left;}
+.dt-sc-contact-info i{display:inline-block; font-size:20px; margin:2px 2px 10px 2px; }
 
 .contact_form_outer{background: url(images/contact_form_bg.png) -20px 0px; box-shadow:0px 5px 5px 0px rgba(100, 100, 100, 0.20); -webkit-box-shadow:0px 5px 5px 0px rgba(100, 100, 100, 0.20); -moz-box-shadow:0px 5px 5px 0px rgba(100, 100, 100, 0.20); padding:5px; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px;}
 
@@ -1266,7 +1266,7 @@ footer .widget.widget_text ul li{width:100%; font-size:14px; font-weight:normal;
 
 footer .widget.widget_text ul li:before{content:"\f00c"; text-decoration:inherit; font-size:16px; position:absolute; top:7px; left:0px;}
 
-footer .widget.widget_text ul li a, footer .dt-sc-contact-info a{color:#5c5c5c; display:block;}
+footer .widget.widget_text ul li a, footer .dt-sc-contact-info a{color:#5c5c5c; display:inline-block;}
 
 footer .widget_recent_entries ul li h6{font-size:14px; font-weight:normal; margin-bottom:10px; font-family:inherit;}
 
@@ -1294,7 +1294,7 @@ footer #tweets_container li:before{content:""; background:url(images/twitter_ico
 
 footer .dt-sc-contact-info{clear:both; float:left; width:100%; margin:0px 0px 10px; padding:0px; border:0px;}
 
-footer .dt-sc-contact-info span{font-size:18px; float:left; margin:2px 10px 0px 0px; padding-bottom:12px;}
+footer .dt-sc-contact-info span{font-size:18px;  margin:2px 10px 0px 0px; padding-bottom:12px;}
 
 .widget.mailchimp p{text-transform:uppercase; font-weight:bold;}
 

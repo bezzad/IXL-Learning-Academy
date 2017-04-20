@@ -157,7 +157,7 @@
     <value>خدمات قابل ارائه</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>بهزاد خسروی فر</value>
+    <value>Xomorod.com</value>
   </data>
   <data name="BackgroundJobs" xml:space="preserve">
     <value>کارهای پشت زمینه</value>
@@ -911,5 +911,11 @@
   </data>
   <data name="HushKhallaghiyatZabanamuzi1" xml:space="preserve">
     <value>توانایی و استعداد به کارگیری شفاهی یا کتبی کلمات و واژه‌های موثر در موقعیت‌های گوناگون را هوش کلامی یا زبانی می‌دانند. کسانی که بازی با کلمات را بخوبی بلدند و آنها را به زیبایی به کار می‌برند، حافظه خوبی برای به خاطر سپردن تاریخ‌ها و نام‌ها دارند، زیاد صحبت می‌کنند و داستان‌ها و طنز‌های خنده‌دار را بموقع به یاد می‌آورند، چنین هوشی دارند. این اشخاص برای استدلال و مباحثه، سخنرانی یا ارائه شفاهی مطالب، گزارشگری، بازی با کلمات و مجری‌گری، ارائه سمینار و… بسیار مستعدند.</value>
+  </data>
+  <data name="AuthorUrl" xml:space="preserve">
+    <value>https://Xomorod.com</value>
+  </data>
+  <data name="DesignBy" xml:space="preserve">
+    <value>طراحی توسط</value>
   </data>
 </root>
