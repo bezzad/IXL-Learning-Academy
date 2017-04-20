@@ -16,11 +16,8 @@ namespace IXL.Controllers
         private ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager
         {
-            get
-            {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
-            }
-            set { _userManager = value; }
+            get => _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            set => _userManager = value;
         }
 
 
@@ -28,11 +25,14 @@ namespace IXL.Controllers
 
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)
         {
-            string cultureName = Request.GetUrlCulture(false) // read route culture
-                ?? Request.Cookies[SecurityKeys.CultureCookieKey]?.Value // Attempt to read the culture cookie from Request
-                ?? (Request.UserLanguages?.Any() == true
-                    ? Request.UserLanguages[0] // obtain it from HTTP header AcceptLanguages
-                    : null);
+            // string cultureName = Request.GetUrlCulture(false) // read route culture
+            //    ?? Request.Cookies[SecurityKeys.CultureCookieKey]?.Value // Attempt to read the culture cookie from Request
+            //    ?? (Request.UserLanguages?.Any() == true
+            //        ? Request.UserLanguages[0] // obtain it from HTTP header AcceptLanguages
+            //        : null);
+
+            // TODO: Upper code about multi language 
+            var cultureName = "fa";
 
             // Validate culture name
             cultureName = CultureHelper.GetImplementedCulture(cultureName); // This is safe

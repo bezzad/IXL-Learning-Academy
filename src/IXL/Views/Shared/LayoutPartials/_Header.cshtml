@@ -13,7 +13,7 @@
                 <span class="fa fa-envelope"></span>
             </p>
             <p class="phone-no">
-                <i>@Localization.PhoneNo</i>
+                <i dir="ltr">@Localization.PhoneNo</i>
                 <span class="fa fa-phone"></span>
             </p>
         </div>
@@ -26,7 +26,7 @@
                 <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
                 <ul id="menu-main-menu" class="menu">
                     <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red">
-                        @Html.ActionLink("Home", "Index", "Home")
+                        @Html.ActionLink(Localization.Home, "Index", "Home")
                         <ul class="sub-menu">
                             <li> <a href="#"> Submenu Level I </a> </li>
                             <li> <a href="#"> Submenu Level I </a> </li>
@@ -45,8 +45,8 @@
                         <a class="dt-menu-expand">+</a>
                     </li>
                     <li class="mustard"> @Html.ActionLink("About us", "About", "Home") </li>
-                    <li class="green"> @Html.ActionLink("Our Staffs", "our-staffs", "Home") </li>
-                    <li class="yellow"> @Html.ActionLink("Services", "Services", "Home") </li>
+                    @*<li class="green"> @Html.ActionLink("Our Staffs", "our-staffs", "Home") </li>
+                    <li class="yellow"> @Html.ActionLink("Services", "Services", "Home") </li>*@
                     <li class="menu-item-simple-parent menu-item-depth-0 blue">
                         <a href="portfolio-four-column.html" title="">Portfolio</a>
                         <ul class="sub-menu">
@@ -189,7 +189,7 @@
                         </ul>
                         <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="purple">@Html.ActionLink("Shop", "Shop", "Home") </li>
+                    @*<li class="purple">@Html.ActionLink("Shop", "Shop", "Home") </li>*@
                     <li class="pink">@Html.ActionLink("Contact us", "Contact", "Home") </li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@

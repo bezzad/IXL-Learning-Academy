@@ -349,7 +349,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to contact@khallagh.org.
+        ///   Looks up a localized string similar to contact@khallagh.school.
         /// </summary>
         public static string CompanyEmail {
             get {
