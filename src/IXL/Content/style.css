@@ -166,7 +166,11 @@ header{width:100%; float:left; margin:0px; padding:0px; background:url(images/he
 
 .logo{float:left;}
 
-.logo img{display:block;}
+    .logo img {
+        display: block;
+        width: 200px;
+        margin: 10px;
+    }
 
 header .contact-details .fa{margin-left:5px; color:#252525;}
 
@@ -202,15 +206,25 @@ header ul.dt-sc-social-icons li a.facebook span{border-color:#35538f; background
 
 header ul.dt-sc-social-icons li a.youtube span{border-color:#b70400; background:#b70400;}
 
+header ul.dt-sc-social-icons li a.instagram span{border-color:#f04d47; background:#f04d47;}
+
 header ul.dt-sc-social-icons li a.facebook{border-color:#35538f;}
 	
 header ul.dt-sc-social-icons li a.youtube{border-color:#b70400;}
 
+header ul.dt-sc-social-icons li a.instagram{border-color:#f04d47;}
+
 header ul.dt-sc-social-icons li a.youtube span{border-color:#b70400; background:#b70400;}
+
+header ul.dt-sc-social-icons li a.instagram span{border-color:#f04d47; background:#f04d47;}
 
 header ul.dt-sc-social-icons li a.twitter{border-color:#34b3d3;}
 
+header ul.dt-sc-social-icons li a.telegram{border-color:#34b3d3;}
+
 header ul.dt-sc-social-icons li a.twitter span{border-color:#34b3d3; background:#34b3d3;}
+
+header ul.dt-sc-social-icons li a.telegram span{border-color:#34b3d3; background:#34b3d3;}
 
 header ul.dt-sc-social-icons li a.gplus{border-color:#d53e2b;}
 
