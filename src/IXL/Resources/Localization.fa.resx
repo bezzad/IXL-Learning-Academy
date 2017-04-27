@@ -157,7 +157,7 @@
     <value>خدمات قابل ارائه</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Xomorod.com</value>
+    <value>شرکت زمرد</value>
   </data>
   <data name="BackgroundJobs" xml:space="preserve">
     <value>کارهای پشت زمینه</value>
@@ -193,7 +193,7 @@
     <value>کد</value>
   </data>
   <data name="CompanyAddress" xml:space="preserve">
-    <value>ایران - تبریز - آبرسان - کلانتر کوچه - کلانتر کوچه دوم</value>
+    <value>تبریز - آبرسان - کلانتر کوچه - کلانتر کوچه دوم</value>
   </data>
   <data name="CompanyLocation" xml:space="preserve">
     <value>موقعیت جغرافیایی شرکت</value>
@@ -684,7 +684,7 @@
     <value>عضویت</value>
   </data>
   <data name="SubscriptEmailSubTitle" xml:space="preserve">
-    <value>ایمیل خود را وارد کنید تا جدیدترین خبرهایمان برایتان ارسال شود!</value>
+    <value>عضویت در خبرنامه {0}</value>
   </data>
   <data name="SuccessfullyAuthenticatedWithLoginProvider" xml:space="preserve">
     <value>شما از {0} با موفقیت تایید هویت شدید.
@@ -844,7 +844,7 @@
     <value>6ماه</value>
   </data>
   <data name="lang" xml:space="preserve">
-    <value>fa-ir</value>
+    <value>fa</value>
   </data>
   <data name="PhoneNo" xml:space="preserve">
     <value>+98 413 3250 009</value>
@@ -917,5 +917,56 @@
   </data>
   <data name="DesignBy" xml:space="preserve">
     <value>طراحی توسط</value>
+  </data>
+  <data name="ElementaryCourses" xml:space="preserve">
+    <value>دوره های ابتدایی</value>
+  </data>
+  <data name="FacebookUrl" xml:space="preserve">
+    <value>https://www.facebook.com/khallagh.sc</value>
+  </data>
+  <data name="FifthElementary" xml:space="preserve">
+    <value>پنجم ابتدایی</value>
+  </data>
+  <data name="FirstElementary" xml:space="preserve">
+    <value>اول ابتدایی</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>ما را دنبال کنید</value>
+  </data>
+  <data name="FourthElementary" xml:space="preserve">
+    <value>چهارم ابتدایی</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="InstagramUrl" xml:space="preserve">
+    <value>https://www.instagram.com/khallagh.school/</value>
+  </data>
+  <data name="LatestPost" xml:space="preserve">
+    <value>آخرین اخبار</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>صفحات</value>
+  </data>
+  <data name="Preparation" xml:space="preserve">
+    <value>آمادگی</value>
+  </data>
+  <data name="Preschool" xml:space="preserve">
+    <value>پیش دبستانی</value>
+  </data>
+  <data name="SecondElementary" xml:space="preserve">
+    <value>دوم ابتدایی</value>
+  </data>
+  <data name="StudentRegister" xml:space="preserve">
+    <value>ثبت نام دانش آموزان</value>
+  </data>
+  <data name="TelegramUrl" xml:space="preserve">
+    <value>https://t.me/Khallaghschool</value>
+  </data>
+  <data name="ThridElementary" xml:space="preserve">
+    <value>سوم ابتدایی</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>#</value>
   </data>
 </root>

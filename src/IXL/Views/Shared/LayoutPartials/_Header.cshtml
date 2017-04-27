@@ -8,10 +8,6 @@
             </a>
         </div>
         <div class="contact-details">
-            <p class="mail">
-                <a href="#">@Localization.CompanyEmail</a>
-                <span class="fa fa-envelope"></span>
-            </p>
             <p class="phone-no">
                 <i dir="ltr">@Localization.PhoneNo</i>
                 <span class="fa fa-phone"></span>
@@ -27,34 +23,23 @@
                 <ul id="menu-main-menu" class="menu">
                     <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red">
                         @Html.ActionLink(Localization.Home, "Index", "Home")
-                        <ul class="sub-menu">
-                            <li> <a href="#"> Submenu Level I </a> </li>
-                            <li> <a href="#"> Submenu Level I </a> </li>
-                            <li> <a href="#"> Submenu Level I </a> </li>
-                            <li> <a href="#"> Submenu Level I </a> </li>
-                            <li>
-                                <a href="#"> Submenu Level I </a>
-                                <ul class="sub-menu">
-                                    <li> <a href="#"> Submenu Level II </a> </li>
-                                    <li> <a href="#"> Submenu Level II </a> </li>
-                                    <li> <a href="#"> Submenu Level II </a> </li>
-                                </ul>
-                                <a class="dt-menu-expand">+</a>
-                            </li>
-                        </ul>
-                        <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="mustard"> @Html.ActionLink("About us", "About", "Home") </li>
+                    <li class="mustard"> @Html.ActionLink(Localization.About, "About", "Home") </li>
                     @*<li class="green"> @Html.ActionLink("Our Staffs", "our-staffs", "Home") </li>
                     <li class="yellow"> @Html.ActionLink("Services", "Services", "Home") </li>*@
                     <li class="menu-item-simple-parent menu-item-depth-0 blue">
-                        <a href="portfolio-four-column.html" title="">Portfolio</a>
+                        <a href="#" title="">@Localization.StudentRegister</a>
                         <ul class="sub-menu">
-                            <li><a href="portfolio-four-column.html">Portfolio Four Column</a></li>
+                            <li><a href="portfolio-four-column.html">@Localization.Preparation</a></li>
+                            <li><a href="portfolio-four-column.html">@Localization.Preschool</a></li>
                             <li>
-                                <a href="portfolio-three-column.html">Portfolio Three Column</a>
+                                <a href="#">@Localization.ElementaryCourses</a>
                                 <ul class="sub-menu">
-                                    <li><a href="portfolio-three-column-with-sidebar.html">With Sidebar</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FirstElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.SecondElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.ThridElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FifthElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FifthElementary</a></li>
                                 </ul>
                                 <a class="dt-menu-expand">+</a>
                             </li>
@@ -63,7 +48,7 @@
                     </li>
 
                     <li class="menu-item-megamenu-parent megamenu-4-columns-group menu-item-depth-0 steelblue">
-                        <a href="#" title=""> Pages </a>
+                        <a href="#" title=""> @Localization.Pages </a>
 
                         <div class="megamenu-child-container">
                             <ul class="sub-menu">
@@ -169,7 +154,8 @@
                         </div>
                         <a class="dt-menu-expand">+</a>
                     </li>
-                    <li class="menu-item-simple-parent menu-item-depth-0 lavender">
+
+                    @*<li class="menu-item-simple-parent menu-item-depth-0 lavender">
                         <a href="blog.html" title="">Blog</a>
                         <ul class="sub-menu">
                             <li>
@@ -188,16 +174,18 @@
                             </li>
                         </ul>
                         <a class="dt-menu-expand">+</a>
-                    </li>
+                    </li>*@
+
                     @*<li class="purple">@Html.ActionLink("Shop", "Shop", "Home") </li>*@
-                    <li class="pink">@Html.ActionLink("Contact us", "Contact", "Home") </li>
+
+                    <li class="pink">@Html.ActionLink(Localization.ContactUs, "Contact", "Home") </li>
                 </ul>
                 @*@Html.Partial("_LoginPartial")*@
             </nav>
             <ul class="dt-sc-social-icons">
-                <li><a href="https://www.facebook.com/khallagh.sc" title="Facebook" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
-                <li><a href="https://www.instagram.com/khallagh.school/" title="Instagram" class="dt-sc-tooltip-top instagram fa fa-instagram"><span class="fa fa-instagram"></span></a></li>
-                <li><a href="https://t.me/Khallaghschool" title="Telegram" class="dt-sc-tooltip-top telegram fa fa-telegram"><span class="fa fa-telegram"></span></a></li>
+                <li><a href="@Localization.FacebookUrl" title="Facebook" target="_blank" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="@Localization.InstagramUrl" title="Instagram" target="_blank" class="dt-sc-tooltip-top instagram fa fa-instagram"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="@Localization.TelegramUrl" title="Telegram" target="_blank" class="dt-sc-tooltip-top telegram fa fa-telegram"><span class="fa fa-telegram"></span></a></li>
             </ul>
         </div>
     </div>

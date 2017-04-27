@@ -157,7 +157,7 @@
     <value>At Your Service</value>
   </data>
   <data name="Author" xml:space="preserve">
-    <value>Xomorod.com</value>
+    <value>Xomorod Corporation</value>
   </data>
   <data name="BackgroundJobs" xml:space="preserve">
     <value>Background Jobs</value>
@@ -852,7 +852,7 @@ We will use your personal characteristics, just to respond to you and to prepare
     <value>6m</value>
   </data>
   <data name="lang" xml:space="preserve">
-    <value>en-us</value>
+    <value>en</value>
   </data>
   <data name="PhoneNo" xml:space="preserve">
     <value>+98 413 3250 009</value>
@@ -925,5 +925,56 @@ We will use your personal characteristics, just to respond to you and to prepare
   </data>
   <data name="DesignBy" xml:space="preserve">
     <value>Design by</value>
+  </data>
+  <data name="ElementaryCourses" xml:space="preserve">
+    <value>Elementary Courses</value>
+  </data>
+  <data name="FacebookUrl" xml:space="preserve">
+    <value>https://www.facebook.com/khallagh.sc</value>
+  </data>
+  <data name="FifthElementary" xml:space="preserve">
+    <value>Fifth Elementary</value>
+  </data>
+  <data name="FirstElementary" xml:space="preserve">
+    <value>First Elementary</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Follow us</value>
+  </data>
+  <data name="FourthElementary" xml:space="preserve">
+    <value>Fourth Elementary</value>
+  </data>
+  <data name="GooglePlusUrl" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="InstagramUrl" xml:space="preserve">
+    <value>https://www.instagram.com/khallagh.school/</value>
+  </data>
+  <data name="LatestPost" xml:space="preserve">
+    <value>Latest Post</value>
+  </data>
+  <data name="Pages" xml:space="preserve">
+    <value>Pages</value>
+  </data>
+  <data name="Preparation" xml:space="preserve">
+    <value>Preparation</value>
+  </data>
+  <data name="Preschool" xml:space="preserve">
+    <value>Preschool</value>
+  </data>
+  <data name="SecondElementary" xml:space="preserve">
+    <value>Second Elementary</value>
+  </data>
+  <data name="StudentRegister" xml:space="preserve">
+    <value>Students Register</value>
+  </data>
+  <data name="TelegramUrl" xml:space="preserve">
+    <value>https://t.me/Khallaghschool</value>
+  </data>
+  <data name="ThridElementary" xml:space="preserve">
+    <value>Thrid Elementary</value>
+  </data>
+  <data name="TwitterUrl" xml:space="preserve">
+    <value>#</value>
   </data>
 </root>

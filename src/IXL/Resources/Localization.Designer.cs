@@ -223,7 +223,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Xomorod.com.
+        ///   Looks up a localized string similar to Xomorod Corporation.
         /// </summary>
         public static string Author {
             get {
@@ -529,6 +529,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Elementary Courses.
+        /// </summary>
+        public static string ElementaryCourses {
+            get {
+                return ResourceManager.GetString("ElementaryCourses", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {
@@ -637,6 +646,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://www.facebook.com/khallagh.sc.
+        /// </summary>
+        public static string FacebookUrl {
+            get {
+                return ResourceManager.GetString("FacebookUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to FAQ.
         /// </summary>
         public static string FAQ {
@@ -651,6 +669,33 @@ namespace IXL.Resources {
         public static string Features {
             get {
                 return ResourceManager.GetString("Features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fifth Elementary.
+        /// </summary>
+        public static string FifthElementary {
+            get {
+                return ResourceManager.GetString("FifthElementary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to First Elementary.
+        /// </summary>
+        public static string FirstElementary {
+            get {
+                return ResourceManager.GetString("FirstElementary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Follow us.
+        /// </summary>
+        public static string FollowUs {
+            get {
+                return ResourceManager.GetString("FollowUs", resourceCulture);
             }
         }
         
@@ -678,6 +723,15 @@ namespace IXL.Resources {
         public static string Forgot_your_password {
             get {
                 return ResourceManager.GetString("Forgot_your_password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fourth Elementary.
+        /// </summary>
+        public static string FourthElementary {
+            get {
+                return ResourceManager.GetString("FourthElementary", resourceCulture);
             }
         }
         
@@ -732,6 +786,15 @@ namespace IXL.Resources {
         public static string Google {
             get {
                 return ResourceManager.GetString("Google", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string GooglePlusUrl {
+            get {
+                return ResourceManager.GetString("GooglePlusUrl", resourceCulture);
             }
         }
         
@@ -907,6 +970,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to https://www.instagram.com/khallagh.school/.
+        /// </summary>
+        public static string InstagramUrl {
+            get {
+                return ResourceManager.GetString("InstagramUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error has occurred. Please check your internet connection!.
         /// </summary>
         public static string InternetError {
@@ -961,7 +1033,7 @@ namespace IXL.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to en-us.
+        ///   Looks up a localized string similar to en.
         /// </summary>
         public static string lang {
             get {
@@ -975,6 +1047,15 @@ namespace IXL.Resources {
         public static string LanguageName {
             get {
                 return ResourceManager.GetString("LanguageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latest Post.
+        /// </summary>
+        public static string LatestPost {
+            get {
+                return ResourceManager.GetString("LatestPost", resourceCulture);
             }
         }
         
@@ -1231,6 +1312,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pages.
+        /// </summary>
+        public static string Pages {
+            get {
+                return ResourceManager.GetString("Pages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to PageSpeed Insights.
         /// </summary>
         public static string PageSpeedInsights {
@@ -1299,6 +1389,24 @@ namespace IXL.Resources {
         public static string PortfolioSubTitle {
             get {
                 return ResourceManager.GetString("PortfolioSubTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preparation.
+        /// </summary>
+        public static string Preparation {
+            get {
+                return ResourceManager.GetString("Preparation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preschool.
+        /// </summary>
+        public static string Preschool {
+            get {
+                return ResourceManager.GetString("Preschool", resourceCulture);
             }
         }
         
@@ -1883,6 +1991,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Second Elementary.
+        /// </summary>
+        public static string SecondElementary {
+            get {
+                return ResourceManager.GetString("SecondElementary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select Two-Factor Authentication Provider.
         /// </summary>
         public static string Select_Two_Factor_Authentications {
@@ -2000,6 +2117,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Students Register.
+        /// </summary>
+        public static string StudentRegister {
+            get {
+                return ResourceManager.GetString("StudentRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Subject.
         /// </summary>
         public static string Subject {
@@ -2052,6 +2178,15 @@ namespace IXL.Resources {
         public static string SuccessSubscript {
             get {
                 return ResourceManager.GetString("SuccessSubscript", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://t.me/Khallaghschool.
+        /// </summary>
+        public static string TelegramUrl {
+            get {
+                return ResourceManager.GetString("TelegramUrl", resourceCulture);
             }
         }
         
@@ -2110,6 +2245,15 @@ namespace IXL.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thrid Elementary.
+        /// </summary>
+        public static string ThridElementary {
+            get {
+                return ResourceManager.GetString("ThridElementary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Twitter.
         /// </summary>
         public static string Twitter {
@@ -2133,6 +2277,15 @@ namespace IXL.Resources {
         public static string TwitterSite {
             get {
                 return ResourceManager.GetString("TwitterSite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to #.
+        /// </summary>
+        public static string TwitterUrl {
+            get {
+                return ResourceManager.GetString("TwitterUrl", resourceCulture);
             }
         }
         

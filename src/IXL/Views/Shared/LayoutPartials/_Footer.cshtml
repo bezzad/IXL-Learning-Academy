@@ -6,7 +6,7 @@
         <!--container starts-->
         <div class="container">
 
-            <div class="column dt-sc-one-fourth first">
+            <div class="column dt-sc-one-third first">
                 <aside class="widget widget_text">
                     <h3 class="widgettitle red_sketch"> @Localization.FooterAboutTitle </h3>
                     <p>Happy <a href=""><strong>@Localization.WebsiteSiteName</strong></a> comes with powerful theme options, which empowers you to quickly and easily build incredible store. </p>
@@ -20,9 +20,9 @@
                 </aside>
             </div>
 
-            <div class="column dt-sc-one-fourth">
+            <div class="column dt-sc-one-third">
                 <aside class="widget widget_recent_entries">
-                    <h3 class="widgettitle green_sketch"> Latest Post </h3>
+                    <h3 class="widgettitle green_sketch"> @Localization.LatestPost </h3>
                     <ul>
                         <li>
                             <a href="">
@@ -49,17 +49,9 @@
                 </aside>
             </div>
 
-            <div class="column dt-sc-one-fourth">
-                <aside class="widget tweetbox">
-                    <h3 class="widgettitle yellow_sketch"><a href="#"> Twitter Feeds </a>
-                    </h3>
-                    <div id="tweets_container"></div>
-                </aside>
-            </div>
-
-            <div class="column dt-sc-one-fourth">
+            <div class="column dt-sc-one-third">
                 <aside class="widget widget_text">
-                    <h3 class="widgettitle steelblue_sketch">Contact</h3>
+                    <h3 class="widgettitle steelblue_sketch">@Localization.Contact</h3>
                     <div class="textwidget">
                         <p class="dt-sc-contact-info"><span class="fa fa-map-marker"></span><span> @Localization.CompanyAddress</span></p>
                         <p class="dt-sc-contact-info"><span class="fa fa-phone"></span><span dir="ltr"> @Localization.PhoneNo </span></p>
@@ -67,13 +59,13 @@
                     </div>
                 </aside>
                 <aside class="widget mailchimp">
-                    <p> We're social </p>
+                    <p> @String.Format(Localization.SubscriptEmailSubTitle, Localization.CompanyName) </p>
                     <form name="frmnewsletter" class="mailchimp-form" action="php/subscribe.php" method="post">
-                        <p>
+                        <p style="display: inline-table; direction: ltr">
                             <span class="fa fa-envelope-o"> </span>
-                            <input type="email" placeholder="Email Address" name="mc_email" required />
+                            <input type="email" placeholder="@Localization.EmailAddress" name="mc_email" required />
                         </p>
-                        <input type="submit" value="Subscribe" class="button" name="btnsubscribe">
+                        <input type="submit" value="@Localization.Subscript" class="button" name="btnsubscribe">
                     </form>
                     <div id="ajax_subscribe_msg"></div>
                 </aside>
@@ -85,14 +77,13 @@
     <!--footer-widgets-wrapper ends-->
     <div class="copyright">
         <div class="container">
-            <p class="copyright-info">@Localization.Copyright &copy; @DateTime.Now.Year @Localization.WebsiteSiteName. @Localization.AllRightsReserved. @Localization.DesignBy <a href="@Localization.AuthorUrl" title=""> @Localization.Author </a></p>
+            <p class="copyright-info">@Localization.Copyright &copy; @DateTime.Now.Year @Localization.WebsiteSiteName. @Localization.AllRightsReserved. @Localization.DesignBy <a href="@Localization.AuthorUrl" target="_blank"> @Localization.Author </a></p>
             <div class="footer-links">
-                <p>Follow us</p>
+                <p>@Localization.FollowUs</p>
                 <ul class="dt-sc-social-icons">
-                    <li class="facebook"><a href="#"><img src="@Url.Content("~/Content/images/facebook.png")" alt="" title=""></a></li>
-                    <li class="twitter"><a href="#"><img src="@Url.Content("~/Content/images/twitter.png")" alt="" title=""></a></li>
-                    <li class="gplus"><a href="#"><img src="@Url.Content("~/Content/images/gplus.png")" alt="" title=""></a></li>
-                    <li class="pinterest"><a href="#"><img src="@Url.Content("~/Content/images/pinterest.png")" alt="" title=""></a></li>
+                    <li class="facebook"><a href="@Localization.FacebookUrl" target="_blank"><span class="fa fa-facebook"></span></a></li>
+                    <li class="instagram"><a href="@Localization.InstagramUrl" target="_blank"><span class="fa fa-instagram"></span></a></li>
+                    <li class="telegram"><a href="@Localization.TelegramUrl" target="_blank"><span class="fa fa-telegram"></span></a></li>
                 </ul>
             </div>
         </div>

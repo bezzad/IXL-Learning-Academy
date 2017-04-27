@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using System.Web.Optimization;
 
 namespace IXL
@@ -31,7 +33,8 @@ namespace IXL
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include("~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/layout").Include(
+            var scripts = new List<string>()
+            {
                 "~/Scripts/jquery-2.2.4.js",
                 "~/Scripts/jquery-migrate.min.js",
                 //"~/Scripts/jquery.tabs.min.js",
@@ -45,8 +48,11 @@ namespace IXL
                 "~/Scripts/jquery.prettyPhoto.js",
                 "~/Scripts/twitter/jquery.tweet.min.js",
                 "~/Scripts/shortcodes.js",
-                "~/Scripts/custom.js"
-                ));
+                "~/Scripts/custom.js",
+                "~/Scripts/convertEnNumbersToFa.js"
+            };
+
+            bundles.Add(new ScriptBundle("~/bundles/layout").Include(scripts.ToArray()));
 
 
 
