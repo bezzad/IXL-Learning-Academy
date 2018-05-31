@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using IXL.Resources;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
@@ -30,12 +31,12 @@ namespace IXL.Models
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(ResourceType = typeof(Localization), Name = "NewPassword")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(ResourceType = typeof(Localization), Name = "ConfirmPassword")]
+        [Compare("NewPassword", ErrorMessageResourceType = typeof(Localization), ErrorMessageResourceName = "The_new_password_and_confirmation_password_do_not_match")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -43,18 +44,18 @@ namespace IXL.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(ResourceType = typeof(Localization), Name = "Current_password")]
         public string OldPassword { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(ResourceType = typeof(Localization), Name = "NewPassword")]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(ResourceType = typeof(Localization), Name = "ConfirmPassword")]
+        [Compare("NewPassword", ErrorMessageResourceType = typeof(Localization), ErrorMessageResourceName = "The_new_password_and_confirmation_password_do_not_match")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -62,19 +63,19 @@ namespace IXL.Models
     {
         [Required]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(ResourceType = typeof(Localization), Name = "PhoneNumber")]
         public string Number { get; set; }
     }
 
     public class VerifyPhoneNumberViewModel
     {
         [Required]
-        [Display(Name = "Code")]
+        [Display(ResourceType = typeof(Localization), Name = "Code")]
         public string Code { get; set; }
 
         [Required]
         [Phone]
-        [Display(Name = "Phone Number")]
+        [Display(ResourceType = typeof(Localization), Name = "PhoneNumber")]
         public string PhoneNumber { get; set; }
     }
 

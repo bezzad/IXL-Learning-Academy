@@ -1,8 +1,13 @@
-﻿@{
-    ViewBag.Title = "Login Failure";
+﻿@using IXL.Resources
+@{
+    ViewBag.Title = $"{Localization.LoginFailure}";
 }
 
-<hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3 class="text-danger">Unsuccessful login with service.</h3>
-</hgroup>
+<br /><br />
+<h1>@ViewBag.Title</h1>
+
+<div style="padding: 20px;">
+    <div class="centered minForms">
+        <h3 class="text-danger">@Localization.Unsuccessful_login_with_service</h3>
+    </div>
+</div>

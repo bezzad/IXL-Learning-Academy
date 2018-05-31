@@ -1,0 +1,194 @@
+﻿@using IXL.Resources
+<!--header starts-->
+<header>
+    <div class="container">
+        <div class="logo">
+            <a href="@Url.Action("Index", "Home")" title="@Localization.WebsiteSiteName">
+                <img src="@Url.Content("~/Content/images/Khallagh/logo_khallaghschool_fa.png")" alt="Kids Life" title="Kids Life">
+            </a>
+        </div>
+        <div class="contact-details">
+            <p class="phone-no">
+                <i dir="ltr">@Localization.PhoneNo</i>
+                <span class="fa fa-phone"></span>
+            </p>
+        </div>
+    </div>
+    <!--menu-container starts-->
+    <div id="menu-container">
+        <div class="container">
+            <!--nav starts-->
+            <nav id="main-menu">
+                <div class="dt-menu-toggle" id="dt-menu-toggle">Menu<span class="dt-menu-toggle-icon"></span></div>
+                <ul id="menu-main-menu" class="menu">
+                    <li class="current_page_item menu-item-simple-parent menu-item-depth-0 red">
+                        @Html.ActionLink(Localization.Home, "Index", "Home")
+                    </li>
+                    <li class="mustard"> @Html.ActionLink(Localization.About, "About", "Home") </li>
+                    @*<li class="green"> @Html.ActionLink("Our Staffs", "our-staffs", "Home") </li>
+                    <li class="yellow"> @Html.ActionLink("Services", "Services", "Home") </li>*@
+                    <li class="menu-item-simple-parent menu-item-depth-0 blue">
+                        <a href="#" title="">@Localization.StudentRegister</a>
+                        <ul class="sub-menu">
+                            <li><a href="portfolio-four-column.html">@Localization.Preparation</a></li>
+                            <li><a href="portfolio-four-column.html">@Localization.Preschool</a></li>
+                            <li>
+                                <a href="#">@Localization.ElementaryCourses</a>
+                                <ul class="sub-menu">
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FirstElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.SecondElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.ThridElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FifthElementary</a></li>
+                                    <li><a href="portfolio-three-column-with-sidebar.html">@Localization.FifthElementary</a></li>
+                                </ul>
+                                <a class="dt-menu-expand">+</a>
+                            </li>
+                        </ul>
+                        <a class="dt-menu-expand">+</a>
+                    </li>
+
+                    <li class="menu-item-megamenu-parent megamenu-4-columns-group menu-item-depth-0 steelblue">
+                        <a href="#" title=""> @Localization.Pages </a>
+
+                        <div class="megamenu-child-container">
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="#">Useful Shortcodes</a>
+                                    <ul class="sub-menu">
+                                        <li> <a href="shortcodes.html">Typography </a> </li>
+                                        <li><a href="buttons-lists.html" title="">Buttons &amp; Lists</a></li>
+                                        <li><a href="columns.html" title="">Columns</a></li>
+                                        <li><a href="fancy-boxes.html" title="">Fancy Boxes</a></li>
+                                        <li><a href="icon-boxes.html" title="">Icon Boxes</a></li>
+                                        <li><a href="pricing-tables.html" title="">Pricing Tables</a></li>
+                                        <li><a href="progressbars.html" title="">Progress Bars</a></li>
+                                        <li><a href="quotes.html" title="">Quotes</a></li>
+                                        <li><a href="tabs-toggles.html" title="">Tabs &amp; Toggles</a></li>
+                                    </ul>
+                                    <a class="dt-menu-expand">+</a>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-depth-1 menu-item-with-widget-area">
+                                    <a href="#">Popular Products</a>
+                                    <div class="menu-item-widget-area-container">
+                                        <ul>
+                                            <li class="widget widget_popular_products">
+                                                <ul class="product_list_widget">
+                                                    <li>
+                                                        <a href="#" title="">
+                                                            <img src="@Url.Content("~/Content/images/product10-76x70.jpg")" alt="product"> Ellents Style Grade
+                                                        </a>
+                                                        <span class="amount">$20.00</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="">
+                                                            <img src="@Url.Content("~/Content/images/product12-76x70.jpg")" alt="product"> Ellents Style Grade
+                                                        </a>
+                                                        <span class="amount">$20.00</span>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" title="">
+                                                            <img src="@Url.Content("~/Content/images/product11-76x70.jpg")" alt="product"> Ellents Style Grade
+                                                        </a>
+                                                        <span class="amount">$20.00</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-depth-1 menu-item-with-widget-area  fill-two-columns">
+                                    <a href="#">Featured Blog</a>
+                                    <div class="menu-item-widget-area-container">
+                                        <ul>
+                                            <li class="widget widget_recent_entries">
+                                                <div class="entry-thumb">
+                                                    <a href="blog-detail.html"><img src="@Url.Content("~/Content/images/blog_img1.jpg")" alt="" title=""></a>
+                                                </div>
+                                                <div class="entry-body">
+                                                    <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.</p>
+                                                </div>
+                                                <div class="entry-details">
+                                                    <div class="entry-title">
+                                                        <h5><a href="blog-detail.html"> Create your Works </a></h5>
+                                                    </div>
+                                                    <div class="entry-metadata">
+                                                        <p class="author">
+                                                            <a href="#"> By Admin </a>
+                                                        </p>
+                                                        <span class=""> | </span>
+                                                        <p class="comments">
+                                                            <a href="#"><span class="fa fa-comment"></span></a>
+                                                        </p>
+                                                        <p class="date"> 10 Aug </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="widget widget_recent_entries">
+                                                <div class="entry-thumb">
+                                                    <a href="blog-detail.html"><img src="http://placehold.it/200x137" alt="" title=""></a>
+                                                </div>
+                                                <div class="entry-body">
+                                                    <p>Minima ve nostrum exercita tionem ullam corporis suscipit laboriosam, nisi ut aliquid ex.</p>
+                                                </div>
+                                                <div class="entry-details">
+                                                    <div class="entry-title">
+                                                        <h5><a href="blog-detail.html"> Best of the Blogs </a></h5>
+                                                    </div>
+                                                    <div class="entry-metadata">
+                                                        <p class="author">
+                                                            <a href="#"> By Admin </a>
+                                                        </p>
+                                                        <span class=""> | </span>
+                                                        <p class="comments">
+                                                            <a href="#"><span class="fa fa-comment"></span></a>
+                                                        </p>
+                                                        <p class="date"> 10 Aug </p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="dt-menu-expand">+</a>
+                    </li>
+
+                    @*<li class="menu-item-simple-parent menu-item-depth-0 lavender">
+                        <a href="blog.html" title="">Blog</a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="blog-two-column.html">Blog Two Column</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-two-column-with-sidebar.html">With Sidebar</a></li>
+                                </ul>
+                                <a class="dt-menu-expand">+</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Blog One Column</a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-with-sidebar.html">With Sidebar</a></li>
+                                </ul>
+                                <a class="dt-menu-expand">+</a>
+                            </li>
+                        </ul>
+                        <a class="dt-menu-expand">+</a>
+                    </li>*@
+
+                    @*<li class="purple">@Html.ActionLink("Shop", "Shop", "Home") </li>*@
+
+                    <li class="pink">@Html.ActionLink(Localization.ContactUs, "Contact", "Home") </li>
+                </ul>
+                @*@Html.Partial("_LoginPartial")*@
+            </nav>
+            <ul class="dt-sc-social-icons">
+                <li><a href="@Localization.FacebookUrl" title="Facebook" target="_blank" class="dt-sc-tooltip-top facebook"><span class="fa fa-facebook"></span></a></li>
+                <li><a href="@Localization.InstagramUrl" title="Instagram" target="_blank" class="dt-sc-tooltip-top instagram fa fa-instagram"><span class="fa fa-instagram"></span></a></li>
+                <li><a href="@Localization.TelegramUrl" title="Telegram" target="_blank" class="dt-sc-tooltip-top telegram fa fa-telegram"><span class="fa fa-telegram"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!--menu-container ends-->
+</header>
+<!--header ends-->

@@ -1,24 +1,27 @@
-﻿@model IXL.Models.SendCodeViewModel
+﻿@using IXL.Resources
+@model IXL.Models.SendCodeViewModel
 @{
-    ViewBag.Title = "Send";
+    ViewBag.Title = $"{Localization.Send}";
 }
 
-<h2>@ViewBag.Title.</h2>
+<br /><br />
+<h1>@ViewBag.Title</h1>
 
-@using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" })) {
-    @Html.AntiForgeryToken()
-    @Html.Hidden("rememberMe", @Model.RememberMe)
-    <h4>Send verification code</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-8">
-            Select Two-Factor Authentication Provider:
-            @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
-            <input type="submit" value="Submit" class="btn btn-default" />
+<div style="padding: 20px;">
+    @using (Html.BeginForm("SendCode", "Account", new { ReturnUrl = Model.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.Hidden("rememberMe", @Model.RememberMe)
+        <h4>@Localization.Send_verification_code</h4>
+        <hr />
+        <div class="centered minForms">
+            <div class="row">
+                <div class="col-md-8">
+                    @Localization.Select_Two_Factor_Authentications:
+                    @Html.DropDownListFor(model => model.SelectedProvider, Model.Providers)
+                    <input type="submit" value="@Localization.Submit" class="btn btn-default" />
+                </div>
+            </div>
         </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    }
+</div>
